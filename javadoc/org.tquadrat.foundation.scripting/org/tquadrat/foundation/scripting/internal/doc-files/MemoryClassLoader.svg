@@ -1,0 +1,575 @@
+
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:cc="http://creativecommons.org/ns#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:svg="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     version='1.1'
+     baseProfile='full'
+     width='1296.000'
+     height='1663.000'>
+    <defs>
+        <style><![CDATA[
+            line
+            {
+              stroke: black;
+            }
+            line.separator
+            {
+              stroke:       black;
+              stroke-width: 1;
+            }
+            marker
+            {
+              fill: white;
+            }
+            path
+            {
+              fill:   white;
+              stroke: black;
+            }
+            path.implementation
+            {
+              fill:             none;
+              stroke-dasharray: 5,5;
+              stroke-width:     3;
+            }
+            path.inheritance
+            {
+              fill:         none;
+              stroke-width: 3;
+            }
+            rect
+            {
+              fill:         none;
+              stroke:       black;
+              stroke-width: 2;
+            }
+            rect.externalClass
+            {
+              fill:         #D0D0D0;
+              fill-opacity: 0.8;
+            }
+            rect.focusClass
+            {
+              fill:         #FFFFF9;
+              fill-opacity: 0.8;
+            }
+            rect.otherClass
+            {
+              fill:         #F0E68C;
+              fill-opacity: 0.8;
+            }
+            rect.template
+            {
+              fill:             #FFFFFF;
+              fill-opacity:     1.0;
+              stroke-dasharray: 3,3;
+            }
+            text
+            {
+              font-family: monospace;
+              font-size:   10px;
+              font-weight: bold;
+            }
+            text.abstract
+            {
+              font-style: italic;
+            }
+            text.final
+            {
+              text-decoration: underline;
+            }
+            text.static
+            {
+              font-weight: normal;
+            }
+            text.stereotype
+            {
+              font-size:   8px;
+              font-weight: normal;
+            }
+            ]]></style>
+        <marker id='inheritance'
+                viewBox='0,0,40,40'
+                markerUnits='strokeWidth'
+                refX='40'
+                refY='20'
+                markerWidth='6'
+                markerHeight='6'
+                orient='auto'>
+            <path d='M40,20 l-40,-20 v40 Z'
+                  fill='#ffffff'
+                  stroke='#000000'
+                  stroke-width='3'/>
+        </marker>
+        <marker id='implementation'
+                viewBox='0,0,40,40'
+                markerUnits='strokeWidth'
+                refX='40'
+                refY='20'
+                markerWidth='6'
+                markerHeight='6'
+                orient='auto'>
+            <path d='M40,20 l-40,-20 v40 Z'
+                  fill='#ffffff'
+                  stroke='#000000'
+                  stroke-width='3'/>
+        </marker>
+        <clipPath id='ID000001'>
+            <rect class='focusClass'
+                  height='95.000'
+                  width='766.000'
+                  x='0.000'
+                  y='0.000'/>
+        </clipPath>
+        <symbol id='org.tquadrat.foundation.scripting.internal.MemoryClassLoader'>
+            <g>
+                <g class='focusClass'
+                   clip-path='url(#ID000001)'>
+                    <rect x='0.000'
+                          y='0.000'
+                          width='766.000'
+                          height='95.000'
+                          class='focusClass'/>
+                    <line x1='0.000'
+                          y1='17.000'
+                          x2='766.000'
+                          y2='17.000'
+                          class='separator'/>
+                    <text x='332.000'
+                          y='13.000'>MemoryClassLoader</text>
+                    <line x1='0.000'
+                          y1='34.000'
+                          x2='766.000'
+                          y2='34.000'
+                          class='separator'/>
+                    <text y='30.000'
+                          class='final'>- m_ClassBytes:java.util.Map&lt;java.lang.String,byte[]&gt;</text>
+                    <text x='5.000'
+                          y='47.000'>+ MemoryClassLoader(classBytes:java.util.Map&lt;java.lang.String,byte[]&gt;,classPath:java.lang.String,parent:java.lang.ClassLoader)</text>
+                    <text x='5.000'
+                          y='58.000'>+ MemoryClassLoader(classBytes:java.util.Map&lt;java.lang.String,byte[]&gt;,classPath:java.lang.String)</text>
+                    <text x='5.000'
+                          y='69.000'># findClass(className:java.lang.String):java.lang.Class&lt;?&gt;</text>
+                    <text x='5.000'
+                          y='80.000'>+ loadAll():java.lang.Iterable&lt;java.lang.Class&lt;?&gt;&gt;</text>
+                    <text x='5.000'
+                          y='91.000'
+                          class='static'>- toURLs(classPath:java.lang.String):java.net.URL[]</text>
+                </g>
+            </g>
+        </symbol>
+        <clipPath id='ID000002'>
+            <rect class='externalClass'
+                  height='216.000'
+                  width='754.000'
+                  x='0.000'
+                  y='0.000'/>
+        </clipPath>
+        <symbol id='java.net.URLClassLoader'>
+            <g>
+                <g clip-path='url(#ID000002)'>
+                    <rect x='0.000'
+                          y='0.000'
+                          width='754.000'
+                          height='216.000'
+                          class='externalClass'/>
+                    <line x1='0.000'
+                          y1='17.000'
+                          x2='754.000'
+                          y2='17.000'
+                          class='separator'/>
+                    <text x='335.000'
+                          y='13.000'>URLClassLoader</text>
+                    <line x1='0.000'
+                          y1='34.000'
+                          x2='754.000'
+                          y2='34.000'
+                          class='separator'/>
+                    <text x='5.000'
+                          y='30.000'>&#x2026;</text>
+                    <text x='5.000'
+                          y='47.000'>+ URLClassLoader(arg0:java.net.URL[],arg1:java.lang.ClassLoader)</text>
+                    <text x='5.000'
+                          y='58.000'>+ URLClassLoader(arg0:java.net.URL[])</text>
+                    <text x='5.000'
+                          y='69.000'>+ URLClassLoader(arg0:java.net.URL[],arg1:java.lang.ClassLoader,arg2:java.net.URLStreamHandlerFactory)</text>
+                    <text x='5.000'
+                          y='80.000'>+ URLClassLoader(arg0:java.lang.String,arg1:java.net.URL[],arg2:java.lang.ClassLoader)</text>
+                    <text x='5.000'
+                          y='91.000'>+ URLClassLoader(arg0:java.lang.String,arg1:java.net.URL[],arg2:java.lang.ClassLoader,arg3:java.net.URLStreamHandlerFactory)</text>
+                    <text x='5.000'
+                          y='102.000'>+ getResourceAsStream(arg0:java.lang.String):java.io.InputStream</text>
+                    <text x='5.000'
+                          y='113.000'>+ close():void</text>
+                    <text x='5.000'
+                          y='124.000'># addURL(arg0:java.net.URL):void</text>
+                    <text x='5.000'
+                          y='135.000'>+ getURLs():java.net.URL[]</text>
+                    <text x='5.000'
+                          y='146.000'># findClass(arg0:java.lang.String):java.lang.Class&lt;?&gt;</text>
+                    <text x='5.000'
+                          y='157.000'># definePackage(arg0:java.lang.String,arg1:java.util.jar.Manifest,arg2:java.net.URL):java.lang.Package</text>
+                    <text x='5.000'
+                          y='168.000'>+ findResource(arg0:java.lang.String):java.net.URL</text>
+                    <text x='5.000'
+                          y='179.000'>+ findResources(arg0:java.lang.String):java.util.Enumeration&lt;java.net.URL&gt;</text>
+                    <text x='5.000'
+                          y='190.000'># getPermissions(arg0:java.security.CodeSource):java.security.PermissionCollection</text>
+                    <text x='5.000'
+                          y='201.000'
+                          class='static'>+ newInstance(arg0:java.net.URL[],arg1:java.lang.ClassLoader):java.net.URLClassLoader</text>
+                    <text x='5.000'
+                          y='212.000'
+                          class='static'>+ newInstance(arg0:java.net.URL[]):java.net.URLClassLoader</text>
+                </g>
+            </g>
+        </symbol>
+        <clipPath id='ID000003'>
+            <rect class='externalClass'
+                  height='106.000'
+                  width='700.000'
+                  x='0.000'
+                  y='0.000'/>
+        </clipPath>
+        <symbol id='java.security.SecureClassLoader'>
+            <g>
+                <g clip-path='url(#ID000003)'>
+                    <rect x='0.000'
+                          y='0.000'
+                          width='700.000'
+                          height='106.000'
+                          class='externalClass'/>
+                    <line x1='0.000'
+                          y1='17.000'
+                          x2='700.000'
+                          y2='17.000'
+                          class='separator'/>
+                    <text x='299.000'
+                          y='13.000'>SecureClassLoader</text>
+                    <line x1='0.000'
+                          y1='34.000'
+                          x2='700.000'
+                          y2='34.000'
+                          class='separator'/>
+                    <text x='5.000'
+                          y='30.000'>&#x2026;</text>
+                    <text x='5.000'
+                          y='47.000'># SecureClassLoader(arg0:java.lang.ClassLoader)</text>
+                    <text x='5.000'
+                          y='58.000'># SecureClassLoader()</text>
+                    <text x='5.000'
+                          y='69.000'># SecureClassLoader(arg0:java.lang.String,arg1:java.lang.ClassLoader)</text>
+                    <text x='5.000'
+                          y='80.000'># defineClass(arg0:java.lang.String,arg1:byte[],arg2:int,arg3:int,arg4:java.security.CodeSource):java.lang.Class&lt;?&gt;</text>
+                    <text x='5.000'
+                          y='91.000'># defineClass(arg0:java.lang.String,arg1:java.nio.ByteBuffer,arg2:java.security.CodeSource):java.lang.Class&lt;?&gt;</text>
+                    <text x='5.000'
+                          y='102.000'># getPermissions(arg0:java.security.CodeSource):java.security.PermissionCollection</text>
+                </g>
+            </g>
+        </symbol>
+        <clipPath id='ID000004'>
+            <rect class='externalClass'
+                  height='62.000'
+                  width='94.000'
+                  x='0.000'
+                  y='0.000'/>
+        </clipPath>
+        <symbol id='java.io.Closeable'>
+            <g>
+                <g clip-path='url(#ID000004)'>
+                    <rect x='0.000'
+                          y='0.000'
+                          width='94.000'
+                          height='62.000'
+                          class='externalClass'/>
+                    <line x1='0.000'
+                          y1='28.000'
+                          x2='94.000'
+                          y2='28.000'
+                          class='separator'/>
+                    <text x='20.600'
+                          y='13.000'
+                          class='stereotype'>&#xAB;Interface&#xBB;</text>
+                    <text x='20.000'
+                          y='24.000'
+                          class='abstract'>Closeable</text>
+                    <line x1='0.000'
+                          y1='45.000'
+                          x2='94.000'
+                          y2='45.000'
+                          class='separator'/>
+                    <text x='5.000'
+                          y='41.000'/>
+                    <text x='5.000'
+                          y='58.000'
+                          class='abstract'>+ close():void</text>
+                </g>
+            </g>
+        </symbol>
+        <clipPath id='ID000005'>
+            <rect class='externalClass'
+                  height='524.000'
+                  width='1246.000'
+                  x='0.000'
+                  y='0.000'/>
+        </clipPath>
+        <symbol id='java.lang.ClassLoader'>
+            <g>
+                <g clip-path='url(#ID000005)'>
+                    <rect x='0.000'
+                          y='0.000'
+                          width='1246.000'
+                          height='524.000'
+                          class='externalClass'/>
+                    <line x1='0.000'
+                          y1='28.000'
+                          x2='1246.000'
+                          y2='28.000'
+                          class='separator'/>
+                    <text x='608.600'
+                          y='13.000'
+                          class='stereotype'>&#xAB;Type&#xBB;</text>
+                    <text x='590.000'
+                          y='24.000'
+                          class='abstract'>ClassLoader</text>
+                    <line x1='0.000'
+                          y1='45.000'
+                          x2='1246.000'
+                          y2='45.000'
+                          class='separator'/>
+                    <text x='5.000'
+                          y='41.000'>&#x2026;</text>
+                    <text x='5.000'
+                          y='58.000'># ClassLoader(arg0:java.lang.String,arg1:java.lang.ClassLoader)</text>
+                    <text x='5.000'
+                          y='69.000'># ClassLoader(arg0:java.lang.ClassLoader)</text>
+                    <text x='5.000'
+                          y='80.000'># ClassLoader()</text>
+                    <text x='5.000'
+                          y='91.000'>+ getName():java.lang.String</text>
+                    <text x='5.000'
+                          y='102.000'>+ loadClass(arg0:java.lang.String):java.lang.Class&lt;?&gt;</text>
+                    <text x='5.000'
+                          y='113.000'># loadClass(arg0:java.lang.String,arg1:boolean):java.lang.Class&lt;?&gt;</text>
+                    <text x='5.000'
+                          y='124.000'># getClassLoadingLock(arg0:java.lang.String):java.lang.Object</text>
+                    <text x='5.000'
+                          y='135.000'># findClass(arg0:java.lang.String):java.lang.Class&lt;?&gt;</text>
+                    <text x='5.000'
+                          y='146.000'># findClass(arg0:java.lang.String,arg1:java.lang.String):java.lang.Class&lt;?&gt;</text>
+                    <text x='5.000'
+                          y='157.000'># defineClass(arg0:byte[],arg1:int,arg2:int):java.lang.Class&lt;?&gt;</text>
+                    <text x='5.000'
+                          y='168.000'># defineClass(arg0:java.lang.String,arg1:byte[],arg2:int,arg3:int):java.lang.Class&lt;?&gt;</text>
+                    <text x='5.000'
+                          y='179.000'># defineClass(arg0:java.lang.String,arg1:byte[],arg2:int,arg3:int,arg4:java.security.ProtectionDomain):java.lang.Class&lt;?&gt;</text>
+                    <text x='5.000'
+                          y='190.000'># defineClass(arg0:java.lang.String,arg1:java.nio.ByteBuffer,arg2:java.security.ProtectionDomain):java.lang.Class&lt;?&gt;</text>
+                    <text x='5.000'
+                          y='201.000'># resolveClass(arg0:java.lang.Class&lt;?&gt;):void</text>
+                    <text x='5.000'
+                          y='212.000'># findSystemClass(arg0:java.lang.String):java.lang.Class&lt;?&gt;</text>
+                    <text x='5.000'
+                          y='223.000'># findLoadedClass(arg0:java.lang.String):java.lang.Class&lt;?&gt;</text>
+                    <text x='5.000'
+                          y='234.000'># setSigners(arg0:java.lang.Class&lt;?&gt;,arg1:java.lang.Object[]):void</text>
+                    <text x='5.000'
+                          y='245.000'># findResource(arg0:java.lang.String,arg1:java.lang.String):java.net.URL</text>
+                    <text x='5.000'
+                          y='256.000'>+ getResource(arg0:java.lang.String):java.net.URL</text>
+                    <text x='5.000'
+                          y='267.000'>+ getResources(arg0:java.lang.String):java.util.Enumeration&lt;java.net.URL&gt;</text>
+                    <text x='5.000'
+                          y='278.000'>+ resources(arg0:java.lang.String):java.util.stream.Stream&lt;java.net.URL&gt;</text>
+                    <text x='5.000'
+                          y='289.000'># findResource(arg0:java.lang.String):java.net.URL</text>
+                    <text x='5.000'
+                          y='300.000'># findResources(arg0:java.lang.String):java.util.Enumeration&lt;java.net.URL&gt;</text>
+                    <text x='5.000'
+                          y='311.000'
+                          class='static'># registerAsParallelCapable():boolean</text>
+                    <text x='5.000'
+                          y='322.000'>+ isRegisteredAsParallelCapable():boolean</text>
+                    <text x='5.000'
+                          y='333.000'
+                          class='static'>+ getSystemResource(arg0:java.lang.String):java.net.URL</text>
+                    <text x='5.000'
+                          y='344.000'
+                          class='static'>+ getSystemResources(arg0:java.lang.String):java.util.Enumeration&lt;java.net.URL&gt;</text>
+                    <text x='5.000'
+                          y='355.000'>+ getResourceAsStream(arg0:java.lang.String):java.io.InputStream</text>
+                    <text x='5.000'
+                          y='366.000'
+                          class='static'>+ getSystemResourceAsStream(arg0:java.lang.String):java.io.InputStream</text>
+                    <text x='5.000'
+                          y='377.000'>+ getParent():java.lang.ClassLoader</text>
+                    <text x='5.000'
+                          y='388.000'>+ getUnnamedModule():java.lang.Module</text>
+                    <text x='5.000'
+                          y='399.000'
+                          class='static'>+ getPlatformClassLoader():java.lang.ClassLoader</text>
+                    <text x='5.000'
+                          y='410.000'
+                          class='static'>+ getSystemClassLoader():java.lang.ClassLoader</text>
+                    <text x='5.000'
+                          y='421.000'># definePackage(arg0:java.lang.String,arg1:java.lang.String,arg2:java.lang.String,arg3:java.lang.String,arg4:java.lang.String,arg5:java.lang.String,arg6:java.lang.String,arg7:java.net.URL):java.lang.Package</text>
+                    <text x='5.000'
+                          y='432.000'>+ getDefinedPackage(arg0:java.lang.String):java.lang.Package</text>
+                    <text x='5.000'
+                          y='443.000'>+ getDefinedPackages():java.lang.Package[]</text>
+                    <text x='5.000'
+                          y='454.000'># getPackage(arg0:java.lang.String):java.lang.Package</text>
+                    <text x='5.000'
+                          y='465.000'># getPackages():java.lang.Package[]</text>
+                    <text x='5.000'
+                          y='476.000'># findLibrary(arg0:java.lang.String):java.lang.String</text>
+                    <text x='5.000'
+                          y='487.000'>+ setDefaultAssertionStatus(arg0:boolean):void</text>
+                    <text x='5.000'
+                          y='498.000'>+ setPackageAssertionStatus(arg0:java.lang.String,arg1:boolean):void</text>
+                    <text x='5.000'
+                          y='509.000'>+ setClassAssertionStatus(arg0:java.lang.String,arg1:boolean):void</text>
+                    <text x='5.000'
+                          y='520.000'>+ clearAssertionStatus():void</text>
+                </g>
+            </g>
+        </symbol>
+        <clipPath id='ID000006'>
+            <rect class='externalClass'
+                  height='62.000'
+                  width='94.000'
+                  x='0.000'
+                  y='0.000'/>
+        </clipPath>
+        <symbol id='java.lang.AutoCloseable'>
+            <g>
+                <g clip-path='url(#ID000006)'>
+                    <rect x='0.000'
+                          y='0.000'
+                          width='94.000'
+                          height='62.000'
+                          class='externalClass'/>
+                    <line x1='0.000'
+                          y1='28.000'
+                          x2='94.000'
+                          y2='28.000'
+                          class='separator'/>
+                    <text x='20.600'
+                          y='13.000'
+                          class='stereotype'>&#xAB;Interface&#xBB;</text>
+                    <text x='8.000'
+                          y='24.000'
+                          class='abstract'>AutoCloseable</text>
+                    <line x1='0.000'
+                          y1='45.000'
+                          x2='94.000'
+                          y2='45.000'
+                          class='separator'/>
+                    <text x='5.000'
+                          y='41.000'/>
+                    <text x='5.000'
+                          y='58.000'
+                          class='abstract'>+ close():void</text>
+                </g>
+            </g>
+        </symbol>
+        <clipPath id='ID000007'>
+            <rect class='externalClass'
+                  height='172.000'
+                  width='244.000'
+                  x='0.000'
+                  y='0.000'/>
+        </clipPath>
+        <symbol id='java.lang.Object'>
+            <g>
+                <g clip-path='url(#ID000007)'>
+                    <rect x='0.000'
+                          y='0.000'
+                          width='244.000'
+                          height='172.000'
+                          class='externalClass'/>
+                    <line x1='0.000'
+                          y1='17.000'
+                          x2='244.000'
+                          y2='17.000'
+                          class='separator'/>
+                    <text x='104.000'
+                          y='13.000'>Object</text>
+                    <line x1='0.000'
+                          y1='34.000'
+                          x2='244.000'
+                          y2='34.000'
+                          class='separator'/>
+                    <text x='5.000'
+                          y='30.000'/>
+                    <text x='5.000'
+                          y='47.000'>+ Object()</text>
+                    <text x='5.000'
+                          y='58.000'>+ getClass():java.lang.Class&lt;?&gt;</text>
+                    <text x='5.000'
+                          y='69.000'>+ hashCode():int</text>
+                    <text x='5.000'
+                          y='80.000'>+ equals(arg0:java.lang.Object):boolean</text>
+                    <text x='5.000'
+                          y='91.000'># clone():java.lang.Object</text>
+                    <text x='5.000'
+                          y='102.000'>+ toString():java.lang.String</text>
+                    <text x='5.000'
+                          y='113.000'>+ notify():void</text>
+                    <text x='5.000'
+                          y='124.000'>+ notifyAll():void</text>
+                    <text x='5.000'
+                          y='135.000'>+ wait():void</text>
+                    <text x='5.000'
+                          y='146.000'>+ wait(arg0:long):void</text>
+                    <text x='5.000'
+                          y='157.000'>+ wait(arg0:long,arg1:int):void</text>
+                    <text x='5.000'
+                          y='168.000'># finalize():void</text>
+                </g>
+            </g>
+        </symbol>
+    </defs>
+    <path class='inheritance'
+          d='M648.000,1443.000 L648.000,1343.000'
+          marker-end='url(#inheritance)'/>
+    <path class='inheritance'
+          d='M623.000,1127.000 c0.000,-85.000,-248.000,0.000,-248.000,-85.000 v-15'
+          marker-end='url(#inheritance)'/>
+    <path class='implementation'
+          d='M673.000,1127.000 c0.000,-129.000,149.000,0.000,149.000,-129.000 v-15'
+          marker-end='url(#implementation)'/>
+    <path class='inheritance'
+          d='M375.000,921.000 c0.000,-85.000,273.000,0.000,273.000,-85.000 v-15'
+          marker-end='url(#inheritance)'/>
+    <path class='inheritance'
+          d='M822.000,921.000 c0.000,-819.000,-498.000,0.000,-498.000,-819.000 v-15'
+          marker-end='url(#inheritance)'/>
+    <path class='inheritance'
+          d='M648.000,297.000 c0.000,-85.000,324.000,0.000,324.000,-85.000 v-15'
+          marker-end='url(#inheritance)'/>
+    <use x='277.000'
+         y='25.000'
+         xlink:href='#java.lang.AutoCloseable'/>
+    <use x='850.000'
+         y='25.000'
+         xlink:href='#java.lang.Object'/>
+    <use x='25.000'
+         y='297.000'
+         xlink:href='#java.lang.ClassLoader'/>
+    <use x='25.000'
+         y='921.000'
+         xlink:href='#java.security.SecureClassLoader'/>
+    <use x='775.000'
+         y='921.000'
+         xlink:href='#java.io.Closeable'/>
+    <use x='271.000'
+         y='1127.000'
+         xlink:href='#java.net.URLClassLoader'/>
+    <use x='265.000'
+         y='1443.000'
+         xlink:href='#org.tquadrat.foundation.scripting.internal.MemoryClassLoader'/>
+</svg>

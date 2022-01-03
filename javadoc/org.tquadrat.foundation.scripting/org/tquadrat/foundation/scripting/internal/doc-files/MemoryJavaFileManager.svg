@@ -1,0 +1,599 @@
+
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:cc="http://creativecommons.org/ns#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:svg="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     version='1.1'
+     baseProfile='full'
+     width='1206.000'
+     height='1429.000'>
+    <defs>
+        <style><![CDATA[
+            line
+            {
+              stroke: black;
+            }
+            line.separator
+            {
+              stroke:       black;
+              stroke-width: 1;
+            }
+            marker
+            {
+              fill: white;
+            }
+            path
+            {
+              fill:   white;
+              stroke: black;
+            }
+            path.implementation
+            {
+              fill:             none;
+              stroke-dasharray: 5,5;
+              stroke-width:     3;
+            }
+            path.inheritance
+            {
+              fill:         none;
+              stroke-width: 3;
+            }
+            rect
+            {
+              fill:         none;
+              stroke:       black;
+              stroke-width: 2;
+            }
+            rect.externalClass
+            {
+              fill:         #D0D0D0;
+              fill-opacity: 0.8;
+            }
+            rect.focusClass
+            {
+              fill:         #FFFFF9;
+              fill-opacity: 0.8;
+            }
+            rect.otherClass
+            {
+              fill:         #F0E68C;
+              fill-opacity: 0.8;
+            }
+            rect.template
+            {
+              fill:             #FFFFFF;
+              fill-opacity:     1.0;
+              stroke-dasharray: 3,3;
+            }
+            text
+            {
+              font-family: monospace;
+              font-size:   10px;
+              font-weight: bold;
+            }
+            text.abstract
+            {
+              font-style: italic;
+            }
+            text.final
+            {
+              text-decoration: underline;
+            }
+            text.static
+            {
+              font-weight: normal;
+            }
+            text.stereotype
+            {
+              font-size:   8px;
+              font-weight: normal;
+            }
+            ]]></style>
+        <marker id='inheritance'
+                viewBox='0,0,40,40'
+                markerUnits='strokeWidth'
+                refX='40'
+                refY='20'
+                markerWidth='6'
+                markerHeight='6'
+                orient='auto'>
+            <path d='M40,20 l-40,-20 v40 Z'
+                  fill='#ffffff'
+                  stroke='#000000'
+                  stroke-width='3'/>
+        </marker>
+        <marker id='implementation'
+                viewBox='0,0,40,40'
+                markerUnits='strokeWidth'
+                refX='40'
+                refY='20'
+                markerWidth='6'
+                markerHeight='6'
+                orient='auto'>
+            <path d='M40,20 l-40,-20 v40 Z'
+                  fill='#ffffff'
+                  stroke='#000000'
+                  stroke-width='3'/>
+        </marker>
+        <clipPath id='ID000001'>
+            <rect class='focusClass'
+                  height='128.000'
+                  width='1156.000'
+                  x='0.000'
+                  y='0.000'/>
+        </clipPath>
+        <symbol id='org.tquadrat.foundation.scripting.internal.MemoryJavaFileManager'>
+            <g>
+                <g class='focusClass'
+                   clip-path='url(#ID000001)'>
+                    <rect x='0.000'
+                          y='0.000'
+                          width='1156.000'
+                          height='128.000'
+                          class='focusClass'/>
+                    <line x1='0.000'
+                          y1='17.000'
+                          x2='1156.000'
+                          y2='17.000'
+                          class='separator'/>
+                    <text x='515.000'
+                          y='13.000'>MemoryJavaFileManager</text>
+                    <line x1='0.000'
+                          y1='45.000'
+                          x2='1156.000'
+                          y2='45.000'
+                          class='separator'/>
+                    <text y='30.000'
+                          class='static final'>- EXT:java.lang.String</text>
+                    <text y='41.000'>- m_ClassBytes:java.util.Map&lt;java.lang.String,byte[]&gt;</text>
+                    <text x='5.000'
+                          y='58.000'>+ MemoryJavaFileManager(parent:javax.tools.JavaFileManager)</text>
+                    <text x='5.000'
+                          y='69.000'>+ close():void</text>
+                    <text x='5.000'
+                          y='80.000'>+ flush():void</text>
+                    <text x='5.000'
+                          y='91.000'>+ getClassBytes():java.util.Map&lt;java.lang.String,byte[]&gt;</text>
+                    <text x='5.000'
+                          y='102.000'>+ getJavaFileForOutput(location:javax.tools.JavaFileManager.Location,className:java.lang.String,kind:javax.tools.JavaFileObject.Kind,sibling:javax.tools.FileObject):javax.tools.JavaFileObject</text>
+                    <text x='5.000'
+                          y='113.000'
+                          class='static'>+ makeStringSource(name:java.lang.String,code:java.lang.String):javax.tools.JavaFileObject</text>
+                    <text x='5.000'
+                          y='124.000'
+                          class='static'>~ toURI(name:java.lang.String):java.net.URI</text>
+                </g>
+            </g>
+        </symbol>
+        <clipPath id='ID000002'>
+            <rect class='externalClass'
+                  height='260.000'
+                  width='1108.000'
+                  x='0.000'
+                  y='8.000'/>
+        </clipPath>
+        <symbol id='javax.tools.ForwardingJavaFileManager'>
+            <g>
+                <g clip-path='url(#ID000002)'>
+                    <rect x='0.000'
+                          y='8.000'
+                          width='1108.000'
+                          height='260.000'
+                          class='externalClass'/>
+                    <line x1='0.000'
+                          y1='25.000'
+                          x2='1108.000'
+                          y2='25.000'
+                          class='separator'/>
+                    <text x='479.000'
+                          y='21.000'>ForwardingJavaFileManager</text>
+                    <line x1='0.000'
+                          y1='42.000'
+                          x2='1108.000'
+                          y2='42.000'
+                          class='separator'/>
+                    <text y='38.000'
+                          class='final'># fileManager:M</text>
+                    <text x='5.000'
+                          y='55.000'># ForwardingJavaFileManager(arg0:M)</text>
+                    <text x='5.000'
+                          y='66.000'>+ getClassLoader(arg0:javax.tools.JavaFileManager.Location):java.lang.ClassLoader</text>
+                    <text x='5.000'
+                          y='77.000'>+ list(arg0:javax.tools.JavaFileManager.Location,arg1:java.lang.String,arg2:java.util.Set&lt;javax.tools.JavaFileObject.Kind&gt;,arg3:boolean):java.lang.Iterable&lt;javax.tools.JavaFileObject&gt;</text>
+                    <text x='5.000'
+                          y='88.000'>+ inferBinaryName(arg0:javax.tools.JavaFileManager.Location,arg1:javax.tools.JavaFileObject):java.lang.String</text>
+                    <text x='5.000'
+                          y='99.000'>+ isSameFile(arg0:javax.tools.FileObject,arg1:javax.tools.FileObject):boolean</text>
+                    <text x='5.000'
+                          y='110.000'>+ handleOption(arg0:java.lang.String,arg1:java.util.Iterator&lt;java.lang.String&gt;):boolean</text>
+                    <text x='5.000'
+                          y='121.000'>+ hasLocation(arg0:javax.tools.JavaFileManager.Location):boolean</text>
+                    <text x='5.000'
+                          y='132.000'>+ isSupportedOption(arg0:java.lang.String):int</text>
+                    <text x='5.000'
+                          y='143.000'>+ getJavaFileForInput(arg0:javax.tools.JavaFileManager.Location,arg1:java.lang.String,arg2:javax.tools.JavaFileObject.Kind):javax.tools.JavaFileObject</text>
+                    <text x='5.000'
+                          y='154.000'>+ getJavaFileForOutput(arg0:javax.tools.JavaFileManager.Location,arg1:java.lang.String,arg2:javax.tools.JavaFileObject.Kind,arg3:javax.tools.FileObject):javax.tools.JavaFileObject</text>
+                    <text x='5.000'
+                          y='165.000'>+ getFileForInput(arg0:javax.tools.JavaFileManager.Location,arg1:java.lang.String,arg2:java.lang.String):javax.tools.FileObject</text>
+                    <text x='5.000'
+                          y='176.000'>+ getFileForOutput(arg0:javax.tools.JavaFileManager.Location,arg1:java.lang.String,arg2:java.lang.String,arg3:javax.tools.FileObject):javax.tools.FileObject</text>
+                    <text x='5.000'
+                          y='187.000'>+ flush():void</text>
+                    <text x='5.000'
+                          y='198.000'>+ close():void</text>
+                    <text x='5.000'
+                          y='209.000'>+ getLocationForModule(arg0:javax.tools.JavaFileManager.Location,arg1:java.lang.String):javax.tools.JavaFileManager.Location</text>
+                    <text x='5.000'
+                          y='220.000'>+ getLocationForModule(arg0:javax.tools.JavaFileManager.Location,arg1:javax.tools.JavaFileObject):javax.tools.JavaFileManager.Location</text>
+                    <text x='5.000'
+                          y='231.000'>+ getServiceLoader(arg0:javax.tools.JavaFileManager.Location,arg1:java.lang.Class&lt;S&gt;):java.util.ServiceLoader&lt;S&gt;</text>
+                    <text x='5.000'
+                          y='242.000'>+ inferModuleName(arg0:javax.tools.JavaFileManager.Location):java.lang.String</text>
+                    <text x='5.000'
+                          y='253.000'>+ listLocationsForModules(arg0:javax.tools.JavaFileManager.Location):java.lang.Iterable&lt;java.util.Set&lt;javax.tools.JavaFileManager.Location&gt;&gt;</text>
+                    <text x='5.000'
+                          y='264.000'>+ contains(arg0:javax.tools.JavaFileManager.Location,arg1:javax.tools.FileObject):boolean</text>
+                </g>
+                <g transform='translate(1083.000 0.000)'>
+                    <rect x='0.000'
+                          y='1.000'
+                          width='50.000'
+                          height='17.000'
+                          class='template'/>
+                    <rect x='0.000'
+                          y='1.000'
+                          width='50.000'
+                          height='17.000'
+                          class='externalClass'
+                          stroke='none'
+                          stroke-opacity='0.0'/>
+                    <text x='5.000'
+                          y='14.000'>M</text>
+                </g>
+            </g>
+        </symbol>
+        <clipPath id='ID000003'>
+            <rect class='externalClass'
+                  height='172.000'
+                  width='244.000'
+                  x='0.000'
+                  y='0.000'/>
+        </clipPath>
+        <symbol id='java.lang.Object'>
+            <g>
+                <g clip-path='url(#ID000003)'>
+                    <rect x='0.000'
+                          y='0.000'
+                          width='244.000'
+                          height='172.000'
+                          class='externalClass'/>
+                    <line x1='0.000'
+                          y1='17.000'
+                          x2='244.000'
+                          y2='17.000'
+                          class='separator'/>
+                    <text x='104.000'
+                          y='13.000'>Object</text>
+                    <line x1='0.000'
+                          y1='34.000'
+                          x2='244.000'
+                          y2='34.000'
+                          class='separator'/>
+                    <text x='5.000'
+                          y='30.000'/>
+                    <text x='5.000'
+                          y='47.000'>+ Object()</text>
+                    <text x='5.000'
+                          y='58.000'>+ getClass():java.lang.Class&lt;?&gt;</text>
+                    <text x='5.000'
+                          y='69.000'>+ hashCode():int</text>
+                    <text x='5.000'
+                          y='80.000'>+ equals(arg0:java.lang.Object):boolean</text>
+                    <text x='5.000'
+                          y='91.000'># clone():java.lang.Object</text>
+                    <text x='5.000'
+                          y='102.000'>+ toString():java.lang.String</text>
+                    <text x='5.000'
+                          y='113.000'>+ notify():void</text>
+                    <text x='5.000'
+                          y='124.000'>+ notifyAll():void</text>
+                    <text x='5.000'
+                          y='135.000'>+ wait():void</text>
+                    <text x='5.000'
+                          y='146.000'>+ wait(arg0:long):void</text>
+                    <text x='5.000'
+                          y='157.000'>+ wait(arg0:long,arg1:int):void</text>
+                    <text x='5.000'
+                          y='168.000'># finalize():void</text>
+                </g>
+            </g>
+        </symbol>
+        <clipPath id='ID000004'>
+            <rect class='externalClass'
+                  height='249.000'
+                  width='1108.000'
+                  x='0.000'
+                  y='0.000'/>
+        </clipPath>
+        <symbol id='javax.tools.JavaFileManager'>
+            <g>
+                <g clip-path='url(#ID000004)'>
+                    <rect x='0.000'
+                          y='0.000'
+                          width='1108.000'
+                          height='249.000'
+                          class='externalClass'/>
+                    <line x1='0.000'
+                          y1='28.000'
+                          x2='1108.000'
+                          y2='28.000'
+                          class='separator'/>
+                    <text x='527.600'
+                          y='13.000'
+                          class='stereotype'>&#xAB;Interface&#xBB;</text>
+                    <text x='509.000'
+                          y='24.000'
+                          class='abstract'>JavaFileManager</text>
+                    <line x1='0.000'
+                          y1='45.000'
+                          x2='1108.000'
+                          y2='45.000'
+                          class='separator'/>
+                    <text x='5.000'
+                          y='41.000'/>
+                    <text x='5.000'
+                          y='58.000'
+                          class='abstract'>+ getClassLoader(arg0:javax.tools.JavaFileManager.Location):java.lang.ClassLoader</text>
+                    <text x='5.000'
+                          y='69.000'
+                          class='abstract'>+ list(arg0:javax.tools.JavaFileManager.Location,arg1:java.lang.String,arg2:java.util.Set&lt;javax.tools.JavaFileObject.Kind&gt;,arg3:boolean):java.lang.Iterable&lt;javax.tools.JavaFileObject&gt;</text>
+                    <text x='5.000'
+                          y='80.000'
+                          class='abstract'>+ inferBinaryName(arg0:javax.tools.JavaFileManager.Location,arg1:javax.tools.JavaFileObject):java.lang.String</text>
+                    <text x='5.000'
+                          y='91.000'
+                          class='abstract'>+ isSameFile(arg0:javax.tools.FileObject,arg1:javax.tools.FileObject):boolean</text>
+                    <text x='5.000'
+                          y='102.000'
+                          class='abstract'>+ handleOption(arg0:java.lang.String,arg1:java.util.Iterator&lt;java.lang.String&gt;):boolean</text>
+                    <text x='5.000'
+                          y='113.000'
+                          class='abstract'>+ hasLocation(arg0:javax.tools.JavaFileManager.Location):boolean</text>
+                    <text x='5.000'
+                          y='124.000'
+                          class='abstract'>+ getJavaFileForInput(arg0:javax.tools.JavaFileManager.Location,arg1:java.lang.String,arg2:javax.tools.JavaFileObject.Kind):javax.tools.JavaFileObject</text>
+                    <text x='5.000'
+                          y='135.000'
+                          class='abstract'>+ getJavaFileForOutput(arg0:javax.tools.JavaFileManager.Location,arg1:java.lang.String,arg2:javax.tools.JavaFileObject.Kind,arg3:javax.tools.FileObject):javax.tools.JavaFileObject</text>
+                    <text x='5.000'
+                          y='146.000'
+                          class='abstract'>+ getFileForInput(arg0:javax.tools.JavaFileManager.Location,arg1:java.lang.String,arg2:java.lang.String):javax.tools.FileObject</text>
+                    <text x='5.000'
+                          y='157.000'
+                          class='abstract'>+ getFileForOutput(arg0:javax.tools.JavaFileManager.Location,arg1:java.lang.String,arg2:java.lang.String,arg3:javax.tools.FileObject):javax.tools.FileObject</text>
+                    <text x='5.000'
+                          y='168.000'
+                          class='abstract'>+ flush():void</text>
+                    <text x='5.000'
+                          y='179.000'
+                          class='abstract'>+ close():void</text>
+                    <text x='5.000'
+                          y='190.000'>&#x2A22; getLocationForModule(arg0:javax.tools.JavaFileManager.Location,arg1:java.lang.String):javax.tools.JavaFileManager.Location</text>
+                    <text x='5.000'
+                          y='201.000'>&#x2A22; getLocationForModule(arg0:javax.tools.JavaFileManager.Location,arg1:javax.tools.JavaFileObject):javax.tools.JavaFileManager.Location</text>
+                    <text x='5.000'
+                          y='212.000'>&#x2A22; getServiceLoader(arg0:javax.tools.JavaFileManager.Location,arg1:java.lang.Class&lt;S&gt;):java.util.ServiceLoader&lt;S&gt;</text>
+                    <text x='5.000'
+                          y='223.000'>&#x2A22; inferModuleName(arg0:javax.tools.JavaFileManager.Location):java.lang.String</text>
+                    <text x='5.000'
+                          y='234.000'>&#x2A22; listLocationsForModules(arg0:javax.tools.JavaFileManager.Location):java.lang.Iterable&lt;java.util.Set&lt;javax.tools.JavaFileManager.Location&gt;&gt;</text>
+                    <text x='5.000'
+                          y='245.000'>&#x2A22; contains(arg0:javax.tools.JavaFileManager.Location,arg1:javax.tools.FileObject):boolean</text>
+                </g>
+            </g>
+        </symbol>
+        <clipPath id='ID000005'>
+            <rect class='externalClass'
+                  height='62.000'
+                  width='94.000'
+                  x='0.000'
+                  y='0.000'/>
+        </clipPath>
+        <symbol id='java.io.Closeable'>
+            <g>
+                <g clip-path='url(#ID000005)'>
+                    <rect x='0.000'
+                          y='0.000'
+                          width='94.000'
+                          height='62.000'
+                          class='externalClass'/>
+                    <line x1='0.000'
+                          y1='28.000'
+                          x2='94.000'
+                          y2='28.000'
+                          class='separator'/>
+                    <text x='20.600'
+                          y='13.000'
+                          class='stereotype'>&#xAB;Interface&#xBB;</text>
+                    <text x='20.000'
+                          y='24.000'
+                          class='abstract'>Closeable</text>
+                    <line x1='0.000'
+                          y1='45.000'
+                          x2='94.000'
+                          y2='45.000'
+                          class='separator'/>
+                    <text x='5.000'
+                          y='41.000'/>
+                    <text x='5.000'
+                          y='58.000'
+                          class='abstract'>+ close():void</text>
+                </g>
+            </g>
+        </symbol>
+        <clipPath id='ID000006'>
+            <rect class='externalClass'
+                  height='62.000'
+                  width='94.000'
+                  x='0.000'
+                  y='0.000'/>
+        </clipPath>
+        <symbol id='java.io.Flushable'>
+            <g>
+                <g clip-path='url(#ID000006)'>
+                    <rect x='0.000'
+                          y='0.000'
+                          width='94.000'
+                          height='62.000'
+                          class='externalClass'/>
+                    <line x1='0.000'
+                          y1='28.000'
+                          x2='94.000'
+                          y2='28.000'
+                          class='separator'/>
+                    <text x='20.600'
+                          y='13.000'
+                          class='stereotype'>&#xAB;Interface&#xBB;</text>
+                    <text x='20.000'
+                          y='24.000'
+                          class='abstract'>Flushable</text>
+                    <line x1='0.000'
+                          y1='45.000'
+                          x2='94.000'
+                          y2='45.000'
+                          class='separator'/>
+                    <text x='5.000'
+                          y='41.000'/>
+                    <text x='5.000'
+                          y='58.000'
+                          class='abstract'>+ flush():void</text>
+                </g>
+            </g>
+        </symbol>
+        <clipPath id='ID000007'>
+            <rect class='externalClass'
+                  height='62.000'
+                  width='286.000'
+                  x='0.000'
+                  y='0.000'/>
+        </clipPath>
+        <symbol id='javax.tools.OptionChecker'>
+            <g>
+                <g clip-path='url(#ID000007)'>
+                    <rect x='0.000'
+                          y='0.000'
+                          width='286.000'
+                          height='62.000'
+                          class='externalClass'/>
+                    <line x1='0.000'
+                          y1='28.000'
+                          x2='286.000'
+                          y2='28.000'
+                          class='separator'/>
+                    <text x='116.600'
+                          y='13.000'
+                          class='stereotype'>&#xAB;Interface&#xBB;</text>
+                    <text x='104.000'
+                          y='24.000'
+                          class='abstract'>OptionChecker</text>
+                    <line x1='0.000'
+                          y1='45.000'
+                          x2='286.000'
+                          y2='45.000'
+                          class='separator'/>
+                    <text x='5.000'
+                          y='41.000'/>
+                    <text x='5.000'
+                          y='58.000'
+                          class='abstract'>+ isSupportedOption(arg0:java.lang.String):int</text>
+                </g>
+            </g>
+        </symbol>
+        <clipPath id='ID000008'>
+            <rect class='externalClass'
+                  height='62.000'
+                  width='94.000'
+                  x='0.000'
+                  y='0.000'/>
+        </clipPath>
+        <symbol id='java.lang.AutoCloseable'>
+            <g>
+                <g clip-path='url(#ID000008)'>
+                    <rect x='0.000'
+                          y='0.000'
+                          width='94.000'
+                          height='62.000'
+                          class='externalClass'/>
+                    <line x1='0.000'
+                          y1='28.000'
+                          x2='94.000'
+                          y2='28.000'
+                          class='separator'/>
+                    <text x='20.600'
+                          y='13.000'
+                          class='stereotype'>&#xAB;Interface&#xBB;</text>
+                    <text x='8.000'
+                          y='24.000'
+                          class='abstract'>AutoCloseable</text>
+                    <line x1='0.000'
+                          y1='45.000'
+                          x2='94.000'
+                          y2='45.000'
+                          class='separator'/>
+                    <text x='5.000'
+                          y='41.000'/>
+                    <text x='5.000'
+                          y='58.000'
+                          class='abstract'>+ close():void</text>
+                </g>
+            </g>
+        </symbol>
+    </defs>
+    <path class='inheritance'
+          d='M603.000,1176.000 c0.000,-85.000,-12.500,0.000,-12.500,-85.000 v-15'
+          marker-end='url(#inheritance)'/>
+    <path class='inheritance'
+          d='M565.500,816.000 c0.000,-604.000,-414.750,0.000,-414.750,-604.000 v-15'
+          marker-end='url(#inheritance)'/>
+    <path class='implementation'
+          d='M615.500,816.000 c0.000,-93.000,-12.500,0.000,-12.500,-93.000 v-15'
+          marker-end='url(#implementation)'/>
+    <path class='inheritance'
+          d='M603.000,459.000 L603.000,359.000'
+          marker-end='url(#inheritance)'/>
+    <path class='inheritance'
+          d='M553.000,459.000 c0.000,-357.000,-100.750,0.000,-100.750,-357.000 v-15'
+          marker-end='url(#inheritance)'/>
+    <path class='inheritance'
+          d='M653.000,459.000 c0.000,-357.000,100.750,0.000,100.750,-357.000 v-15'
+          marker-end='url(#inheritance)'/>
+    <path class='inheritance'
+          d='M603.000,297.000 c0.000,-195.000,452.250,0.000,452.250,-195.000 v-15'
+          marker-end='url(#inheritance)'/>
+    <use x='28.750'
+         y='25.000'
+         xlink:href='#java.lang.Object'/>
+    <use x='405.250'
+         y='25.000'
+         xlink:href='#java.io.Flushable'/>
+    <use x='610.750'
+         y='25.000'
+         xlink:href='#javax.tools.OptionChecker'/>
+    <use x='1008.250'
+         y='25.000'
+         xlink:href='#java.lang.AutoCloseable'/>
+    <use x='556.000'
+         y='297.000'
+         xlink:href='#java.io.Closeable'/>
+    <use x='49.000'
+         y='459.000'
+         xlink:href='#javax.tools.JavaFileManager'/>
+    <use x='36.500'
+         y='808.000'
+         xlink:href='#javax.tools.ForwardingJavaFileManager'/>
+    <use x='25.000'
+         y='1176.000'
+         xlink:href='#org.tquadrat.foundation.scripting.internal.MemoryJavaFileManager'/>
+</svg>

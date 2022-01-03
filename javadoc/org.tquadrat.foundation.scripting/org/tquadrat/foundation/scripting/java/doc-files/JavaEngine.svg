@@ -1,0 +1,398 @@
+
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:cc="http://creativecommons.org/ns#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:svg="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     version='1.1'
+     baseProfile='full'
+     width='948.000'
+     height='965.000'>
+    <defs>
+        <style><![CDATA[
+            line
+            {
+              stroke: black;
+            }
+            line.separator
+            {
+              stroke:       black;
+              stroke-width: 1;
+            }
+            marker
+            {
+              fill: white;
+            }
+            path
+            {
+              fill:   white;
+              stroke: black;
+            }
+            path.implementation
+            {
+              fill:             none;
+              stroke-dasharray: 5,5;
+              stroke-width:     3;
+            }
+            path.inheritance
+            {
+              fill:         none;
+              stroke-width: 3;
+            }
+            rect
+            {
+              fill:         none;
+              stroke:       black;
+              stroke-width: 2;
+            }
+            rect.externalClass
+            {
+              fill:         #D0D0D0;
+              fill-opacity: 0.8;
+            }
+            rect.focusClass
+            {
+              fill:         #FFFFF9;
+              fill-opacity: 0.8;
+            }
+            rect.otherClass
+            {
+              fill:         #F0E68C;
+              fill-opacity: 0.8;
+            }
+            rect.template
+            {
+              fill:             #FFFFFF;
+              fill-opacity:     1.0;
+              stroke-dasharray: 3,3;
+            }
+            text
+            {
+              font-family: monospace;
+              font-size:   10px;
+              font-weight: bold;
+            }
+            text.abstract
+            {
+              font-style: italic;
+            }
+            text.final
+            {
+              text-decoration: underline;
+            }
+            text.static
+            {
+              font-weight: normal;
+            }
+            text.stereotype
+            {
+              font-size:   8px;
+              font-weight: normal;
+            }
+            ]]></style>
+        <marker id='inheritance'
+                viewBox='0,0,40,40'
+                markerUnits='strokeWidth'
+                refX='40'
+                refY='20'
+                markerWidth='6'
+                markerHeight='6'
+                orient='auto'>
+            <path d='M40,20 l-40,-20 v40 Z'
+                  fill='#ffffff'
+                  stroke='#000000'
+                  stroke-width='3'/>
+        </marker>
+        <marker id='implementation'
+                viewBox='0,0,40,40'
+                markerUnits='strokeWidth'
+                refX='40'
+                refY='20'
+                markerWidth='6'
+                markerHeight='6'
+                orient='auto'>
+            <path d='M40,20 l-40,-20 v40 Z'
+                  fill='#ffffff'
+                  stroke='#000000'
+                  stroke-width='3'/>
+        </marker>
+        <clipPath id='ID000001'>
+            <rect class='focusClass'
+                  height='106.000'
+                  width='208.000'
+                  x='0.000'
+                  y='0.000'/>
+        </clipPath>
+        <symbol id='org.tquadrat.foundation.scripting.java.JavaEngine'>
+            <g>
+                <g class='focusClass'
+                   clip-path='url(#ID000001)'>
+                    <rect x='0.000'
+                          y='0.000'
+                          width='208.000'
+                          height='106.000'
+                          class='focusClass'/>
+                    <line x1='0.000'
+                          y1='28.000'
+                          x2='208.000'
+                          y2='28.000'
+                          class='separator'/>
+                    <text x='77.600'
+                          y='13.000'
+                          class='stereotype'>&#xAB;Interface&#xBB;</text>
+                    <text x='74.000'
+                          y='24.000'
+                          class='abstract'>JavaEngine</text>
+                    <line x1='0.000'
+                          y1='89.000'
+                          x2='208.000'
+                          y2='89.000'
+                          class='separator'/>
+                    <text y='41.000'
+                          class='static final'>+ CLASSPATH:java.lang.String</text>
+                    <text y='52.000'
+                          class='static final'>+ MAINCLASS:java.lang.String</text>
+                    <text y='63.000'
+                          class='static final'>+ PARENTLOADER:java.lang.String</text>
+                    <text y='74.000'
+                          class='static final'>+ SOURCEPATH:java.lang.String</text>
+                    <text y='85.000'
+                          class='static final'>+ SYSPROP_PREFIX:java.lang.String</text>
+                    <text x='5.000'
+                          y='102.000'/>
+                </g>
+            </g>
+        </symbol>
+        <clipPath id='ID000002'>
+            <rect class='otherClass'
+                  height='238.000'
+                  width='580.000'
+                  x='0.000'
+                  y='0.000'/>
+        </clipPath>
+        <symbol id='org.tquadrat.foundation.scripting.internal.JavaEngineImpl'>
+            <g>
+                <g clip-path='url(#ID000002)'>
+                    <rect x='0.000'
+                          y='0.000'
+                          width='580.000'
+                          height='238.000'
+                          class='otherClass'/>
+                    <line x1='0.000'
+                          y1='17.000'
+                          x2='580.000'
+                          y2='17.000'
+                          class='separator'/>
+                    <text x='248.000'
+                          y='13.000'>JavaEngineImpl</text>
+                    <line x1='0.000'
+                          y1='34.000'
+                          x2='580.000'
+                          y2='34.000'
+                          class='separator'/>
+                    <text y='30.000'
+                          class='final'>- m_Compiler:org.tquadrat.foundation.scripting.internal.JavaCompiler</text>
+                    <text x='5.000'
+                          y='47.000'>+ JavaEngineImpl(factory:javax.script.ScriptEngineFactory)</text>
+                    <text x='5.000'
+                          y='58.000'>+ JavaEngineImpl()</text>
+                    <text x='5.000'
+                          y='69.000'>+ compile(reader:java.io.Reader):javax.script.CompiledScript</text>
+                    <text x='5.000'
+                          y='80.000'>+ compile(script:java.lang.String):javax.script.CompiledScript</text>
+                    <text x='5.000'
+                          y='91.000'>+ eval(reader:java.io.Reader,scriptContext:javax.script.ScriptContext):java.lang.Object</text>
+                    <text x='5.000'
+                          y='102.000'>+ eval(script:java.lang.String,scriptContext:javax.script.ScriptContext):java.lang.Object</text>
+                    <text x='5.000'
+                          y='113.000'
+                          class='static'>- evalClass(scriptClass:java.lang.Class&lt;?&gt;,context:javax.script.ScriptContext):java.lang.Object</text>
+                    <text x='5.000'
+                          y='124.000'
+                          class='static'>- findMainClass(classes:java.lang.Iterable&lt;java.lang.Class&lt;?&gt;&gt;):java.lang.Class&lt;?&gt;</text>
+                    <text x='5.000'
+                          y='135.000'
+                          class='static'>- findMainMethod(clazz:java.lang.Class&lt;?&gt;):java.lang.reflect.Method</text>
+                    <text x='5.000'
+                          y='146.000'
+                          class='static'>- findSetScriptContextMethod(clazz:java.lang.Class&lt;?&gt;):java.lang.reflect.Method</text>
+                    <text x='5.000'
+                          y='157.000'
+                          class='static'>- getArguments(context:javax.script.ScriptContext):java.lang.String[]</text>
+                    <text x='5.000'
+                          y='168.000'
+                          class='static'>- getClassPath(context:javax.script.ScriptContext):java.lang.String</text>
+                    <text x='5.000'
+                          y='179.000'>+ getFactory():javax.script.ScriptEngineFactory</text>
+                    <text x='5.000'
+                          y='190.000'
+                          class='static'>- getFileName(context:javax.script.ScriptContext):java.lang.String</text>
+                    <text x='5.000'
+                          y='201.000'
+                          class='static'>- getMainClassName(context:javax.script.ScriptContext):java.lang.String</text>
+                    <text x='5.000'
+                          y='212.000'
+                          class='static'>- getParentLoader(context:javax.script.ScriptContext):java.lang.ClassLoader</text>
+                    <text x='5.000'
+                          y='223.000'
+                          class='static'>- getSourcePath(context:javax.script.ScriptContext):java.lang.String</text>
+                    <text x='5.000'
+                          y='234.000'>- parse(script:java.lang.String,scriptContext:javax.script.ScriptContext):java.lang.Class&lt;?&gt;</text>
+                </g>
+            </g>
+        </symbol>
+        <clipPath id='ID000003'>
+            <rect class='externalClass'
+                  height='271.000'
+                  width='478.000'
+                  x='0.000'
+                  y='0.000'/>
+        </clipPath>
+        <symbol id='javax.script.ScriptEngine'>
+            <g>
+                <g clip-path='url(#ID000003)'>
+                    <rect x='0.000'
+                          y='0.000'
+                          width='478.000'
+                          height='271.000'
+                          class='externalClass'/>
+                    <line x1='0.000'
+                          y1='28.000'
+                          x2='478.000'
+                          y2='28.000'
+                          class='separator'/>
+                    <text x='212.600'
+                          y='13.000'
+                          class='stereotype'>&#xAB;Interface&#xBB;</text>
+                    <text x='203.000'
+                          y='24.000'
+                          class='abstract'>ScriptEngine</text>
+                    <line x1='0.000'
+                          y1='111.000'
+                          x2='478.000'
+                          y2='111.000'
+                          class='separator'/>
+                    <text y='41.000'
+                          class='static final'>+ ARGV:java.lang.String</text>
+                    <text y='52.000'
+                          class='static final'>+ FILENAME:java.lang.String</text>
+                    <text y='63.000'
+                          class='static final'>+ ENGINE:java.lang.String</text>
+                    <text y='74.000'
+                          class='static final'>+ ENGINE_VERSION:java.lang.String</text>
+                    <text y='85.000'
+                          class='static final'>+ NAME:java.lang.String</text>
+                    <text y='96.000'
+                          class='static final'>+ LANGUAGE:java.lang.String</text>
+                    <text y='107.000'
+                          class='static final'>+ LANGUAGE_VERSION:java.lang.String</text>
+                    <text x='5.000'
+                          y='124.000'
+                          class='abstract'>+ eval(arg0:java.lang.String,arg1:javax.script.ScriptContext):java.lang.Object</text>
+                    <text x='5.000'
+                          y='135.000'
+                          class='abstract'>+ eval(arg0:java.io.Reader,arg1:javax.script.ScriptContext):java.lang.Object</text>
+                    <text x='5.000'
+                          y='146.000'
+                          class='abstract'>+ eval(arg0:java.lang.String):java.lang.Object</text>
+                    <text x='5.000'
+                          y='157.000'
+                          class='abstract'>+ eval(arg0:java.io.Reader):java.lang.Object</text>
+                    <text x='5.000'
+                          y='168.000'
+                          class='abstract'>+ eval(arg0:java.lang.String,arg1:javax.script.Bindings):java.lang.Object</text>
+                    <text x='5.000'
+                          y='179.000'
+                          class='abstract'>+ eval(arg0:java.io.Reader,arg1:javax.script.Bindings):java.lang.Object</text>
+                    <text x='5.000'
+                          y='190.000'
+                          class='abstract'>+ put(arg0:java.lang.String,arg1:java.lang.Object):void</text>
+                    <text x='5.000'
+                          y='201.000'
+                          class='abstract'>+ get(arg0:java.lang.String):java.lang.Object</text>
+                    <text x='5.000'
+                          y='212.000'
+                          class='abstract'>+ getBindings(arg0:int):javax.script.Bindings</text>
+                    <text x='5.000'
+                          y='223.000'
+                          class='abstract'>+ setBindings(arg0:javax.script.Bindings,arg1:int):void</text>
+                    <text x='5.000'
+                          y='234.000'
+                          class='abstract'>+ createBindings():javax.script.Bindings</text>
+                    <text x='5.000'
+                          y='245.000'
+                          class='abstract'>+ getContext():javax.script.ScriptContext</text>
+                    <text x='5.000'
+                          y='256.000'
+                          class='abstract'>+ setContext(arg0:javax.script.ScriptContext):void</text>
+                    <text x='5.000'
+                          y='267.000'
+                          class='abstract'>+ getFactory():javax.script.ScriptEngineFactory</text>
+                </g>
+            </g>
+        </symbol>
+        <clipPath id='ID000004'>
+            <rect class='externalClass'
+                  height='73.000'
+                  width='370.000'
+                  x='0.000'
+                  y='0.000'/>
+        </clipPath>
+        <symbol id='javax.script.Compilable'>
+            <g>
+                <g clip-path='url(#ID000004)'>
+                    <rect x='0.000'
+                          y='0.000'
+                          width='370.000'
+                          height='73.000'
+                          class='externalClass'/>
+                    <line x1='0.000'
+                          y1='28.000'
+                          x2='370.000'
+                          y2='28.000'
+                          class='separator'/>
+                    <text x='158.600'
+                          y='13.000'
+                          class='stereotype'>&#xAB;Interface&#xBB;</text>
+                    <text x='155.000'
+                          y='24.000'
+                          class='abstract'>Compilable</text>
+                    <line x1='0.000'
+                          y1='45.000'
+                          x2='370.000'
+                          y2='45.000'
+                          class='separator'/>
+                    <text x='5.000'
+                          y='41.000'/>
+                    <text x='5.000'
+                          y='58.000'
+                          class='abstract'>+ compile(arg0:java.lang.String):javax.script.CompiledScript</text>
+                    <text x='5.000'
+                          y='69.000'
+                          class='abstract'>+ compile(arg0:java.io.Reader):javax.script.CompiledScript</text>
+                </g>
+            </g>
+        </symbol>
+    </defs>
+    <path class='implementation'
+          d='M474.000,602.000 L474.000,502.000'
+          marker-end='url(#implementation)'/>
+    <path class='inheritance'
+          d='M449.000,396.000 c0.000,-85.000,-185.000,0.000,-185.000,-85.000 v-15'
+          marker-end='url(#inheritance)'/>
+    <path class='inheritance'
+          d='M499.000,396.000 c0.000,-283.000,239.000,0.000,239.000,-283.000 v-15'
+          marker-end='url(#inheritance)'/>
+    <use x='25.000'
+         y='25.000'
+         xlink:href='#javax.script.ScriptEngine'/>
+    <use x='553.000'
+         y='25.000'
+         xlink:href='#javax.script.Compilable'/>
+    <use x='370.000'
+         y='396.000'
+         xlink:href='#org.tquadrat.foundation.scripting.java.JavaEngine'/>
+    <use x='184.000'
+         y='602.000'
+         xlink:href='#org.tquadrat.foundation.scripting.internal.JavaEngineImpl'/>
+</svg>

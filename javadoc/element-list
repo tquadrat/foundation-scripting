@@ -1,0 +1,5 @@
+module:org.tquadrat.foundation.scripting
+org.tquadrat.foundation.scripting.factory
+org.tquadrat.foundation.scripting.internal
+org.tquadrat.foundation.scripting.java
+org.tquadrat.foundation.scripting.spi
