@@ -32,7 +32,6 @@ module org.tquadrat.foundation.scripting
     requires transitive java.scripting;
 
     //---* The foundation modules *--------------------------------------------
-    requires transitive org.tquadrat.foundation.base;
     requires transitive org.tquadrat.foundation.util;
 
     //---* The exports *-------------------------------------------------------
