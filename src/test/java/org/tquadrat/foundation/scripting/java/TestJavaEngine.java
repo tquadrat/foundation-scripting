@@ -28,13 +28,13 @@ import static javax.script.ScriptEngine.ENGINE_VERSION;
 import static javax.script.ScriptEngine.FILENAME;
 import static javax.script.ScriptEngine.LANGUAGE;
 import static javax.script.ScriptEngine.LANGUAGE_VERSION;
-import static javax.script.ScriptEngine.NAME;
 import static org.easymock.EasyMock.expect;
 import static org.easymock.EasyMock.expectLastCall;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 import static org.tquadrat.foundation.lang.CommonConstants.EMPTY_STRING;
@@ -46,22 +46,19 @@ import static org.tquadrat.foundation.scripting.java.JavaEngine.PARENTLOADER;
 import static org.tquadrat.foundation.scripting.java.JavaEngine.SOURCEPATH;
 import static org.tquadrat.foundation.util.StringUtils.format;
 
-import java.io.PrintStream;
-import java.io.Reader;
-import java.util.HashSet;
-import java.util.Set;
-
-import javax.script.Bindings;
 import javax.script.CompiledScript;
 import javax.script.ScriptContext;
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineFactory;
 import javax.script.ScriptException;
+import java.io.PrintStream;
+import java.io.Reader;
+import java.util.Collection;
+import java.util.HashSet;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.tquadrat.foundation.annotation.ClassVersion;
 import org.tquadrat.foundation.exception.NullArgumentException;
+import org.tquadrat.foundation.exception.ValidationException;
 import org.tquadrat.foundation.scripting.factory.JavaEngineFactory;
 import org.tquadrat.foundation.testutil.TestBaseClass;
 
@@ -74,7 +71,6 @@ import org.tquadrat.foundation.testutil.TestBaseClass;
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
  *  @version $Id: TestJavaEngine.java 878 2021-02-20 19:56:13Z tquadrat $
  */
-@SuppressWarnings( "MisorderedAssertEqualsArguments" )
 @ClassVersion( sourceVersion = "$Id: TestJavaEngine.java 878 2021-02-20 19:56:13Z tquadrat $" )
 public class TestJavaEngine extends TestBaseClass
 {
@@ -86,7 +82,7 @@ public class TestJavaEngine extends TestBaseClass
      *
      *  @throws Exception   Failing the preparation.
      */
-    @SuppressWarnings( {"static-method", "resource"} )
+    @SuppressWarnings( "static-method" )
     @BeforeEach
     public final void setUp() throws Exception
     {
@@ -95,6 +91,7 @@ public class TestJavaEngine extends TestBaseClass
          * The change of the default error stream will be reverted
          * automatically through the base class.
          */
+        //noinspection ImplicitDefaultCharsetUsage
         setErr( new PrintStream( nullOutputStream() ) );
     }   //  setUp()
 
@@ -106,7 +103,6 @@ public class TestJavaEngine extends TestBaseClass
      *
      *  @throws Exception   Something unexpected went wrong.
      */
-    @SuppressWarnings( "InstanceofConcreteClass" )
     @Test
     public final void testJavaEngineFactory() throws Exception
     {
@@ -114,7 +110,7 @@ public class TestJavaEngine extends TestBaseClass
 
         String actual, expected;
 
-        final JavaEngineFactory factory = new JavaEngineFactory();
+        final var factory = new JavaEngineFactory();
         assertNotNull( factory );
 
         assertEquals( JavaEngineFactory.ENGINE_NAME, factory.getEngineName() );
@@ -122,18 +118,18 @@ public class TestJavaEngine extends TestBaseClass
         assertEquals( JavaEngineFactory.LANGUAGE_NAME, factory.getLanguageName() );
         assertEquals( getProperty( PROPERTY_JAVA_VERSION ), factory.getLanguageVersion() );
 
-        final Set<String> extensions = new HashSet<>( factory.getExtensions() );
+        final Collection<String> extensions = new HashSet<>( factory.getExtensions() );
         assertTrue( extensions.remove( "java" ) );
         assertTrue( extensions.isEmpty(), "Unexpected Extension" );
 
-        final Set<String> mimeTypes = new HashSet<>( factory.getMimeTypes() );
+        final Collection<String> mimeTypes = new HashSet<>( factory.getMimeTypes() );
         assertTrue( mimeTypes.remove( "text/x-java-source" ) );
         assertTrue( mimeTypes.remove( "text/java" ) );
         assertTrue( mimeTypes.remove( "text/x-java" ) );
         assertTrue( mimeTypes.remove( "application/ms-java" ) );
         assertTrue( mimeTypes.isEmpty(), "Unexpected Mime Type" );
 
-        final Set<String> names = new HashSet<>( factory.getNames() );
+        final Collection<String> names = new HashSet<>( factory.getNames() );
         assertTrue( names.remove( JavaEngineFactory.LANGUAGE_NAME ) );
         assertTrue( names.remove( JavaEngineFactory.ENGINE_NAME ) );
         assertTrue( names.isEmpty(), "Unexpected Name" );
@@ -192,13 +188,15 @@ public class TestJavaEngine extends TestBaseClass
         assertEquals( expected, actual );
 
         //---* getOutputStatement() *------------------------------------------
-        expected = "System.out.print( \"null\" );";
+        expected = "System.out.print( \"null\" )";
         actual = factory.getOutputStatement( null );
         assertNotNull( actual );
+        assertEquals( expected, actual );
 
-        expected = "System.out.print( \"Text\" );";
+        expected = "System.out.print( \"Text\" )";
         actual = factory.getOutputStatement( "Text" );
         assertNotNull( actual );
+        assertEquals( expected, actual );
 
         /*
          * getProgram() will be tested in testJavaEngine().
@@ -230,157 +228,27 @@ public class TestJavaEngine extends TestBaseClass
         assertEquals( factory, engine.getFactory() );
         assertSame( factory, engine.getFactory() );
 
-        Reader reader;
-        String string;
-        ScriptContext scriptContext;
-        Object result;
+        final var reader = nullReader();
+        final var string = EMPTY_STRING;
 
-        reader = null;
-        string = null;
-        scriptContext = null;
+        assertThrows( ValidationException.class, () -> engine.compile( (Reader) null ) );
+        assertThrows( ValidationException.class, () -> engine.compile( (String) null ) );
+        assertThrows( ValidationException.class, () -> engine.eval( (Reader) null ) );
+        assertThrows( ValidationException.class, () -> engine.eval( (String) null ) );
 
-        {
-            final Class<? extends Throwable> expectedException = NullPointerException.class;
-            try
-            {
-                engine.compile( reader );
-                fail( () -> format( MSG_ExceptionNotThrown, expectedException.getName() ) );
-            }
-            catch( final AssertionError e ) { throw e; }
-            catch( final Throwable t )
-            {
-                final var isExpectedException = expectedException.isInstance( t );
-                assertTrue( isExpectedException, () -> format( MSG_WrongExceptionThrown, expectedException.getName(), t.getClass().getName() ) );
-            }
-            try
-            {
-                engine.compile( string );
-                fail( () -> format( MSG_ExceptionNotThrown, expectedException.getName() ) );
-            }
-            catch( final AssertionError e ) { throw e; }
-            catch( final Throwable t )
-            {
-                final var isExpectedException = expectedException.isInstance( t );
-                assertTrue( isExpectedException, () -> format( MSG_WrongExceptionThrown, expectedException.getName(), t.getClass().getName() ) );
-            }
-            try
-            {
-                engine.eval( reader );
-                fail( () -> format( MSG_ExceptionNotThrown, expectedException.getName() ) );
-            }
-            catch( final AssertionError e ) { throw e; }
-            catch( final Throwable t )
-            {
-                final var isExpectedException = expectedException.isInstance( t );
-                assertTrue( isExpectedException, () -> format( MSG_WrongExceptionThrown, expectedException.getName(), t.getClass().getName() ) );
-            }
-            try
-            {
-                engine.eval( string );
-                fail( () -> format( MSG_ExceptionNotThrown, expectedException.getName() ) );
-            }
-            catch( final AssertionError e ) { throw e; }
-            catch( final Throwable t )
-            {
-                final var isExpectedException = expectedException.isInstance( t );
-                assertTrue( isExpectedException, () -> format( MSG_WrongExceptionThrown, expectedException.getName(), t.getClass().getName() ) );
-            }
-        }
+        assertThrows( ScriptException.class, () -> engine.compile( nullReader() ) );
+        assertThrows( ScriptException.class, () -> engine.compile( EMPTY_STRING ) );
 
-        reader = nullReader();
-        {
-            final Class<? extends Throwable> expectedException = ScriptException.class;
-            try
-            {
-                engine.compile( reader );
-                fail( () -> format( MSG_ExceptionNotThrown, expectedException.getName() ) );
-            }
-            catch( final AssertionError e ) { throw e; }
-            catch( final Throwable t )
-            {
-                final var isExpectedException = expectedException.isInstance( t );
-                assertTrue( isExpectedException, () -> format( MSG_WrongExceptionThrown, expectedException.getName(), t.getClass().getName() ) );
-            }
-        }
-
-        string = EMPTY_STRING;
-        {
-            final Class<? extends Throwable> expectedException = ScriptException.class;
-            try
-            {
-                engine.compile( string );
-                fail( () -> format( MSG_ExceptionNotThrown, expectedException.getName() ) );
-            }
-            catch( final AssertionError e ) { throw e; }
-            catch( final Throwable t )
-            {
-                final var isExpectedException = expectedException.isInstance( t );
-                assertTrue( isExpectedException, () -> format( MSG_WrongExceptionThrown, expectedException.getName(), t.getClass().getName() ) );
-            }
-        }
-
-        scriptContext = createMock( ScriptContext.class );
+        final ScriptContext scriptContext = createMock( ScriptContext.class );
         replayAll();
-        reader = null;
-        string = null;
-        {
-            final Class<? extends Throwable> expectedException = NullPointerException.class;
-            try
-            {
-                engine.eval( reader, scriptContext );
-                fail( () -> format( MSG_ExceptionNotThrown, expectedException.getName() ) );
-            }
-            catch( final AssertionError e ) { throw e; }
-            catch( final Throwable t )
-            {
-                final var isExpectedException = expectedException.isInstance( t );
-                assertTrue( isExpectedException, () -> format( MSG_WrongExceptionThrown, expectedException.getName(), t.getClass().getName() ) );
-            }
-            try
-            {
-                engine.eval( string, scriptContext );
-                fail( () -> format( MSG_ExceptionNotThrown, expectedException.getName() ) );
-            }
-            catch( final AssertionError e ) { throw e; }
-            catch( final Throwable t )
-            {
-                final var isExpectedException = expectedException.isInstance( t );
-                assertTrue( isExpectedException, () -> format( MSG_WrongExceptionThrown, expectedException.getName(), t.getClass().getName() ) );
-            }
-        }
+
+        assertThrows( ValidationException.class, () -> engine.eval( (Reader) null, scriptContext ) );
+        assertThrows( ValidationException.class, () -> engine.eval( (String) null, scriptContext ) );
         resetAll();
 
-        scriptContext = null;
-        reader = nullReader();
-        string = EMPTY_STRING;
-        {
-            final Class<? extends Throwable> expectedException = NullPointerException.class;
-            try
-            {
-                engine.eval( reader, scriptContext );
-                fail( () -> format( MSG_ExceptionNotThrown, expectedException.getName() ) );
-            }
-            catch( final AssertionError e ) { throw e; }
-            catch( final Throwable t )
-            {
-                final var isExpectedException = expectedException.isInstance( t );
-                assertTrue( isExpectedException, () -> format( MSG_WrongExceptionThrown, expectedException.getName(), t.getClass().getName() ) );
-            }
-            try
-            {
-                engine.eval( string, scriptContext );
-                fail( () -> format( MSG_ExceptionNotThrown, expectedException.getName() ) );
-            }
-            catch( final AssertionError e ) { throw e; }
-            catch( final Throwable t )
-            {
-                final var isExpectedException = expectedException.isInstance( t );
-                assertTrue( isExpectedException, () -> format( MSG_WrongExceptionThrown, expectedException.getName(), t.getClass().getName() ) );
-            }
-        }
+        assertThrows( ValidationException.class, () -> engine.eval( reader, (ScriptContext) null ) );
+        assertThrows( ValidationException.class, () -> engine.eval( string, (ScriptContext) null ) );
 
-        reader = nullReader();
-        scriptContext = createMock( ScriptContext.class );
         expect( scriptContext.getAttributesScope( CLASSPATH ) ).andReturn( -1 ).anyTimes();
         expect( scriptContext.getAttributesScope( FILENAME ) ).andReturn( -1 ).anyTimes();
         expect( scriptContext.getAttributesScope( MAINCLASS ) ).andReturn( -1 ).anyTimes();
@@ -390,33 +258,9 @@ public class TestJavaEngine extends TestBaseClass
         scriptContext.setAttribute( "context", scriptContext, ENGINE_SCOPE );
         expectLastCall().anyTimes();
         replayAll();
-        {
-            final Class<? extends Throwable> expectedException = ScriptException.class;
-            try
-            {
-                result = engine.eval( reader, scriptContext );
-                assertNotNull( result );
-                fail( () -> format( MSG_ExceptionNotThrown, expectedException.getName() ) );
-            }
-            catch( final AssertionError e ) { throw e; }
-            catch( final Throwable t )
-            {
-                final var isExpectedException = expectedException.isInstance( t );
-                assertTrue( isExpectedException, () -> format( MSG_WrongExceptionThrown, expectedException.getName(), t.getClass().getName() ) );
-            }
-            try
-            {
-                result = engine.eval( string, scriptContext );
-                assertNotNull( result );
-                fail( () -> format( MSG_ExceptionNotThrown, expectedException.getName() ) );
-            }
-            catch( final AssertionError e ) { throw e; }
-            catch( final Throwable t )
-            {
-                final var isExpectedException = expectedException.isInstance( t );
-                assertTrue( isExpectedException, () -> format( MSG_WrongExceptionThrown, expectedException.getName(), t.getClass().getName() ) );
-            }
-        }
+
+        assertThrows( ScriptException.class, () -> engine.eval( nullReader(), scriptContext ) );
+        assertThrows( ScriptException.class, () -> engine.eval( string, scriptContext ) );
 
         //---* Testing JavaEngineFactory.getProgram() *------------------------
         String actual, expected;
