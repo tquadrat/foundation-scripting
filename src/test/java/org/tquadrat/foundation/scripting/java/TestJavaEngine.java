@@ -69,9 +69,9 @@ import org.tquadrat.foundation.testutil.TestBaseClass;
  *  {@link JavaEngineFactory}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestJavaEngine.java 878 2021-02-20 19:56:13Z tquadrat $
+ *  @version $Id: TestJavaEngine.java 1041 2022-12-18 22:14:52Z tquadrat $
  */
-@ClassVersion( sourceVersion = "$Id: TestJavaEngine.java 878 2021-02-20 19:56:13Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestJavaEngine.java 1041 2022-12-18 22:14:52Z tquadrat $" )
 public class TestJavaEngine extends TestBaseClass
 {
         /*---------*\
