@@ -102,10 +102,10 @@ loadScripts(document, 'script');</script>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.scripting/javax/script/Compilable.html" title="class or interface in javax.script" class="external-link">Compilable</a></code>, <code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.scripting/javax/script/ScriptEngine.html" title="class or interface in javax.script" class="external-link">ScriptEngine</a></code>, <code><a href="../java/JavaEngine.html" title="interface in org.tquadrat.foundation.scripting.java">JavaEngine</a></code></dd>
 </dl>
 <hr>
-<div class="type-signature"><span class="annotations">@ClassVersion(sourceVersion="$Id: JavaEngineImpl.java 878 2021-02-20 19:56:13Z tquadrat $")
+<div class="type-signature"><span class="annotations">@ClassVersion(sourceVersion="$Id: JavaEngineImpl.java 1070 2023-09-29 17:09:34Z tquadrat $")
 <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
-</span><span class="modifiers">public final class </span><span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.scripting/org/tquadrat/foundation/scripting/internal/JavaEngineImpl.html#line-61">JavaEngineImpl</a></span>
+</span><span class="modifiers">public final class </span><span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.scripting/org/tquadrat/foundation/scripting/internal/JavaEngineImpl.html#line-60">JavaEngineImpl</a></span>
 <span class="extends-implements">extends <a href="../spi/ScriptEngineBase.html" title="class in org.tquadrat.foundation.scripting.spi">ScriptEngineBase</a>
 implements <a href="../java/JavaEngine.html" title="interface in org.tquadrat.foundation.scripting.java">JavaEngine</a></span></div>
 <div class="block">This is the script engine for the Java programming language.</div>
@@ -116,7 +116,7 @@ implements <a href="../java/JavaEngine.html" title="interface in org.tquadrat.fo
 <dt><span class="simpleTagLabel">Modified by:</span></dt>
   <dd>Thomas Thrien (<a href="mailto:thomas.thrien@tquadrat.org">thomas.thrien@tquadrat.org</a>)</dd>
 <dt>Version:</dt>
-<dd>$Id: JavaEngineImpl.java 878 2021-02-20 19:56:13Z tquadrat $</dd>
+<dd>$Id: JavaEngineImpl.java 1070 2023-09-29 17:09:34Z tquadrat $</dd>
 <dt>Since:</dt>
 <dd>0.0.5</dd>
 
@@ -329,7 +329,7 @@ implements <a href="../java/JavaEngine.html" title="interface in org.tquadrat.fo
 <li>
 <section class="detail" id="m_Compiler">
 <h3>m_Compiler</h3>
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="JavaCompiler.html" title="class in org.tquadrat.foundation.scripting.internal">JavaCompiler</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.scripting/org/tquadrat/foundation/scripting/internal/JavaEngineImpl.html#line-130">m_Compiler</a></span></div>
+<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="JavaCompiler.html" title="class in org.tquadrat.foundation.scripting.internal">JavaCompiler</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.scripting/org/tquadrat/foundation/scripting/internal/JavaEngineImpl.html#line-129">m_Compiler</a></span></div>
 <div class="block">The Java compiler that is used by this engine.</div>
 </section>
 </li>
@@ -344,7 +344,7 @@ implements <a href="../java/JavaEngine.html" title="interface in org.tquadrat.fo
 <li>
 <section class="detail" id="&lt;init&gt;(javax.script.ScriptEngineFactory)">
 <h3>JavaEngineImpl</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.scripting/org/tquadrat/foundation/scripting/internal/JavaEngineImpl.html#line-142">JavaEngineImpl</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.scripting/javax/script/ScriptEngineFactory.html" title="class or interface in javax.script" class="external-link">ScriptEngineFactory</a>&nbsp;factory)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.scripting/org/tquadrat/foundation/scripting/internal/JavaEngineImpl.html#line-141">JavaEngineImpl</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.scripting/javax/script/ScriptEngineFactory.html" title="class or interface in javax.script" class="external-link">ScriptEngineFactory</a>&nbsp;factory)</span></div>
 <div class="block">Creates a new <code>JavaEngineImpl</code> instance.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -356,7 +356,7 @@ implements <a href="../java/JavaEngine.html" title="interface in org.tquadrat.fo
 <li>
 <section class="detail" id="&lt;init&gt;()">
 <h3>JavaEngineImpl</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.scripting/org/tquadrat/foundation/scripting/internal/JavaEngineImpl.html#line-151">JavaEngineImpl</a></span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.scripting/org/tquadrat/foundation/scripting/internal/JavaEngineImpl.html#line-150">JavaEngineImpl</a></span>()</div>
 <div class="block">Creates a new <code>JavaEngineImpl</code> instance.</div>
 </section>
 </li>
@@ -371,7 +371,7 @@ implements <a href="../java/JavaEngine.html" title="interface in org.tquadrat.fo
 <li>
 <section class="detail" id="compile(java.io.Reader)">
 <h3>compile</h3>
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.scripting/javax/script/CompiledScript.html" title="class or interface in javax.script" class="external-link">CompiledScript</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.scripting/org/tquadrat/foundation/scripting/internal/JavaEngineImpl.html#line-164">compile</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/Reader.html" title="class or interface in java.io" class="external-link">Reader</a>&nbsp;reader)</span>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.scripting/javax/script/CompiledScript.html" title="class or interface in javax.script" class="external-link">CompiledScript</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.scripting/org/tquadrat/foundation/scripting/internal/JavaEngineImpl.html#line-163">compile</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/Reader.html" title="class or interface in java.io" class="external-link">Reader</a>&nbsp;reader)</span>
                              throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.scripting/javax/script/ScriptException.html" title="class or interface in javax.script" class="external-link">ScriptException</a></span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
@@ -390,7 +390,7 @@ implements <a href="../java/JavaEngine.html" title="interface in org.tquadrat.fo
 <li>
 <section class="detail" id="compile(java.lang.String)">
 <h3>compile</h3>
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.scripting/javax/script/CompiledScript.html" title="class or interface in javax.script" class="external-link">CompiledScript</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.scripting/org/tquadrat/foundation/scripting/internal/JavaEngineImpl.html#line-179">compile</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;script)</span>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.scripting/javax/script/CompiledScript.html" title="class or interface in javax.script" class="external-link">CompiledScript</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.scripting/org/tquadrat/foundation/scripting/internal/JavaEngineImpl.html#line-177">compile</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;script)</span>
                              throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.scripting/javax/script/ScriptException.html" title="class or interface in javax.script" class="external-link">ScriptException</a></span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
@@ -409,7 +409,7 @@ implements <a href="../java/JavaEngine.html" title="interface in org.tquadrat.fo
 <li>
 <section class="detail" id="eval(java.io.Reader,javax.script.ScriptContext)">
 <h3>eval</h3>
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.scripting/org/tquadrat/foundation/scripting/internal/JavaEngineImpl.html#line-198">eval</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/Reader.html" title="class or interface in java.io" class="external-link">Reader</a>&nbsp;reader,
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.scripting/org/tquadrat/foundation/scripting/internal/JavaEngineImpl.html#line-196">eval</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/Reader.html" title="class or interface in java.io" class="external-link">Reader</a>&nbsp;reader,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.scripting/javax/script/ScriptContext.html" title="class or interface in javax.script" class="external-link">ScriptContext</a>&nbsp;scriptContext)</span>
                   throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.scripting/javax/script/ScriptException.html" title="class or interface in javax.script" class="external-link">ScriptException</a></span></div>
 <dl class="notes">
@@ -429,7 +429,7 @@ implements <a href="../java/JavaEngine.html" title="interface in org.tquadrat.fo
 <li>
 <section class="detail" id="eval(java.lang.String,javax.script.ScriptContext)">
 <h3>eval</h3>
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.scripting/org/tquadrat/foundation/scripting/internal/JavaEngineImpl.html#line-212">eval</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;script,
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.scripting/org/tquadrat/foundation/scripting/internal/JavaEngineImpl.html#line-210">eval</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;script,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.scripting/javax/script/ScriptContext.html" title="class or interface in javax.script" class="external-link">ScriptContext</a>&nbsp;scriptContext)</span>
                   throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.scripting/javax/script/ScriptException.html" title="class or interface in javax.script" class="external-link">ScriptException</a></span></div>
 <dl class="notes">
@@ -449,7 +449,7 @@ implements <a href="../java/JavaEngine.html" title="interface in org.tquadrat.fo
 <li>
 <section class="detail" id="evalClass(java.lang.Class,javax.script.ScriptContext)">
 <h3>evalClass</h3>
-<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.scripting/org/tquadrat/foundation/scripting/internal/JavaEngineImpl.html#line-231">evalClass</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;?&gt;&nbsp;scriptClass,
+<div class="member-signature"><span class="modifiers">private static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.scripting/org/tquadrat/foundation/scripting/internal/JavaEngineImpl.html#line-229">evalClass</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;?&gt;&nbsp;scriptClass,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.scripting/javax/script/ScriptContext.html" title="class or interface in javax.script" class="external-link">ScriptContext</a>&nbsp;context)</span>
                                throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.scripting/javax/script/ScriptException.html" title="class or interface in javax.script" class="external-link">ScriptException</a></span></div>
 <div class="block">Executes the code defined in the Java class that makes up this script.</div>
@@ -468,7 +468,7 @@ implements <a href="../java/JavaEngine.html" title="interface in org.tquadrat.fo
 <li>
 <section class="detail" id="findMainClass(java.lang.Iterable)">
 <h3>findMainClass</h3>
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;?&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.scripting/org/tquadrat/foundation/scripting/internal/JavaEngineImpl.html#line-291">findMainClass</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link">Iterable</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;?&gt;&gt;&nbsp;classes)</span></div>
+<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;?&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.scripting/org/tquadrat/foundation/scripting/internal/JavaEngineImpl.html#line-290">findMainClass</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link">Iterable</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;?&gt;&gt;&nbsp;classes)</span></div>
 <div class="block">Looks up the main class from the given list of classes. The main class
   is that one that has a method <code>main(String[])</code>.</div>
 <dl class="notes">
@@ -482,7 +482,7 @@ implements <a href="../java/JavaEngine.html" title="interface in org.tquadrat.fo
 <li>
 <section class="detail" id="findMainMethod(java.lang.Class)">
 <h3>findMainMethod</h3>
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/reflect/Method.html" title="class or interface in java.lang.reflect" class="external-link">Method</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.scripting/org/tquadrat/foundation/scripting/internal/JavaEngineImpl.html#line-335">findMainMethod</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;?&gt;&nbsp;clazz)</span></div>
+<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/reflect/Method.html" title="class or interface in java.lang.reflect" class="external-link">Method</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.scripting/org/tquadrat/foundation/scripting/internal/JavaEngineImpl.html#line-334">findMainMethod</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;?&gt;&nbsp;clazz)</span></div>
 <div class="block">Looks up the method <code>main(String[])</code> from the script class.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -496,7 +496,7 @@ implements <a href="../java/JavaEngine.html" title="interface in org.tquadrat.fo
 <li>
 <section class="detail" id="findSetScriptContextMethod(java.lang.Class)">
 <h3>findSetScriptContextMethod</h3>
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/reflect/Method.html" title="class or interface in java.lang.reflect" class="external-link">Method</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.scripting/org/tquadrat/foundation/scripting/internal/JavaEngineImpl.html#line-362">findSetScriptContextMethod</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;?&gt;&nbsp;clazz)</span></div>
+<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/reflect/Method.html" title="class or interface in java.lang.reflect" class="external-link">Method</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.scripting/org/tquadrat/foundation/scripting/internal/JavaEngineImpl.html#line-361">findSetScriptContextMethod</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;?&gt;&nbsp;clazz)</span></div>
 <div class="block">Looks up the method <code>setScriptContext(ScriptContext)</code> from the
   script call.</div>
 <dl class="notes">
@@ -511,7 +511,7 @@ implements <a href="../java/JavaEngine.html" title="interface in org.tquadrat.fo
 <li>
 <section class="detail" id="getArguments(javax.script.ScriptContext)">
 <h3>getArguments</h3>
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.scripting/org/tquadrat/foundation/scripting/internal/JavaEngineImpl.html#line-388">getArguments</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.scripting/javax/script/ScriptContext.html" title="class or interface in javax.script" class="external-link">ScriptContext</a>&nbsp;context)</span></div>
+<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.scripting/org/tquadrat/foundation/scripting/internal/JavaEngineImpl.html#line-387">getArguments</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.scripting/javax/script/ScriptContext.html" title="class or interface in javax.script" class="external-link">ScriptContext</a>&nbsp;context)</span></div>
 <div class="block">Retrieves the script arguments from the context.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -525,7 +525,7 @@ implements <a href="../java/JavaEngine.html" title="interface in org.tquadrat.fo
 <li>
 <section class="detail" id="getClassPath(javax.script.ScriptContext)">
 <h3>getClassPath</h3>
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.scripting/org/tquadrat/foundation/scripting/internal/JavaEngineImpl.html#line-414">getClassPath</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.scripting/javax/script/ScriptContext.html" title="class or interface in javax.script" class="external-link">ScriptContext</a>&nbsp;context)</span></div>
+<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.scripting/org/tquadrat/foundation/scripting/internal/JavaEngineImpl.html#line-413">getClassPath</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.scripting/javax/script/ScriptContext.html" title="class or interface in javax.script" class="external-link">ScriptContext</a>&nbsp;context)</span></div>
 <div class="block">Retrieves the classpath. First the method will look into the provided
   context, and, if no classpath is given there, it will look at the
   system property with the name <code>com.sun.script.java.classpath</code>.</div>

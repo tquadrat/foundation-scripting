@@ -40,12 +40,12 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  it will provide some additional methods for convenience.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: ScriptEngineBase.java 878 2021-02-20 19:56:13Z tquadrat $
+ *  @version $Id: ScriptEngineBase.java 1070 2023-09-29 17:09:34Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: ScriptEngineBase.java 878 2021-02-20 19:56:13Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ScriptEngineBase.java 1070 2023-09-29 17:09:34Z tquadrat $" )
 @API( status = INTERNAL, since = "0.0.5" )
 public abstract class ScriptEngineBase extends AbstractScriptEngine
 {
@@ -116,9 +116,9 @@ public abstract class ScriptEngineBase extends AbstractScriptEngine
     protected static final String readToString( final Reader reader ) throws ScriptException
     {
         final String retValue;
-        try( final var r = new BufferedReader( requireNonNull( reader, "reader" ) ) )
+        try( final var currentReader = new BufferedReader( requireNonNull( reader, "reader" ) ) )
         {
-            retValue = r.lines()
+            retValue = currentReader.lines()
                 .collect( joining( "\n" ) );
         }
         catch( final IOException e )

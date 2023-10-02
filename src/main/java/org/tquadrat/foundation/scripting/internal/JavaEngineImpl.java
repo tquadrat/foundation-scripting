@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- *  Copyright © 2002-2021 by Thomas Thrien.
+ *  Copyright © 2002-2023 by Thomas Thrien.
  *  All Rights Reserved.
  * ============================================================================
  *  Licensed to the public under the agreements of the GNU Lesser General Public
@@ -28,7 +28,6 @@ import static org.tquadrat.foundation.lang.Objects.isNull;
 import static org.tquadrat.foundation.lang.Objects.nonNull;
 import static org.tquadrat.foundation.lang.Objects.requireNonNull;
 import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
-import static org.tquadrat.foundation.util.StringUtils.format;
 
 import javax.script.Compilable;
 import javax.script.CompiledScript;
@@ -53,12 +52,12 @@ import org.tquadrat.foundation.scripting.spi.ScriptEngineBase;
  *
  *  @author A. Sundararajan
  *  @modified    Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: JavaEngineImpl.java 878 2021-02-20 19:56:13Z tquadrat $
+ *  @version $Id: JavaEngineImpl.java 1070 2023-09-29 17:09:34Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: JavaEngineImpl.java 878 2021-02-20 19:56:13Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: JavaEngineImpl.java 1070 2023-09-29 17:09:34Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public final class JavaEngineImpl extends ScriptEngineBase implements JavaEngine
 {
@@ -72,12 +71,12 @@ public final class JavaEngineImpl extends ScriptEngineBase implements JavaEngine
      *
      *  @author A. Sundararajan
      *  @modified    Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: JavaEngineImpl.java 878 2021-02-20 19:56:13Z tquadrat $
+     *  @version $Id: JavaEngineImpl.java 1070 2023-09-29 17:09:34Z tquadrat $
      *  @since 0.0.5
      *
      *  @UMLGraph.link
      */
-    @ClassVersion( sourceVersion = "$Id: JavaEngineImpl.java 878 2021-02-20 19:56:13Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: JavaEngineImpl.java 1070 2023-09-29 17:09:34Z tquadrat $" )
     public final class JavaCompiledScriptImpl extends JavaCompiledScript
     {
             /*--------------*\
@@ -127,7 +126,7 @@ public final class JavaEngineImpl extends ScriptEngineBase implements JavaEngine
     /**
      *  The Java compiler that is used by this engine.
      */
-    @SuppressWarnings( "InstanceVariableOfConcreteClass" )
+    @SuppressWarnings( "UseOfConcreteClass" )
     private final JavaCompiler m_Compiler;
 
         /*--------------*\
@@ -161,7 +160,6 @@ public final class JavaEngineImpl extends ScriptEngineBase implements JavaEngine
      *
      *  @see Compilable#compile(Reader)
      */
-    @SuppressWarnings( "resource" )
     @Override
     public final CompiledScript compile( final Reader reader ) throws ScriptException
     {
@@ -233,15 +231,16 @@ public final class JavaEngineImpl extends ScriptEngineBase implements JavaEngine
         //---* As required by JSR-223 *----------------------------------------
         context.setAttribute( "context", requireNonNull( context, "context" ), ENGINE_SCOPE );
 
+        @SuppressWarnings( "UnnecessaryLocalVariable" )
         final var retValue = scriptClass;
-        if( nonNull( scriptClass ) )
+        if( nonNull( retValue ) )
         {
             try
             {
-                final var isPublicClass = isPublic( scriptClass.getModifiers() );
+                final var isPublicClass = isPublic( retValue.getModifiers() );
 
                 //---* Find the setScriptContext() method *--------------------
-                final var setContextMethod = findSetScriptContextMethod( scriptClass );
+                final var setContextMethod = findSetScriptContextMethod( retValue );
 
                 //---* Call setScriptContext() and pass current context *------
                 if( nonNull( setContextMethod ) )
@@ -255,7 +254,7 @@ public final class JavaEngineImpl extends ScriptEngineBase implements JavaEngine
                 }
 
                 //---* Find the main() method *--------------------------------
-                final var mainMethod = findMainMethod( scriptClass );
+                final var mainMethod = findMainMethod( retValue );
                 if( nonNull( mainMethod ) )
                 {
                     if( !isPublicClass )
@@ -345,7 +344,7 @@ public final class JavaEngineImpl extends ScriptEngineBase implements JavaEngine
                 retValue = method;
             }
         }
-        catch( @SuppressWarnings( "unused" ) final NoSuchMethodException e ) { /* The exception will be ignored deliberately */ }
+        catch( final NoSuchMethodException ignored ) { /* The exception will be ignored deliberately */ }
 
         //---* Done *----------------------------------------------------------
         return retValue;
@@ -372,7 +371,7 @@ public final class JavaEngineImpl extends ScriptEngineBase implements JavaEngine
                 retValue = method;
             }
         }
-        catch( @SuppressWarnings( "unused" ) final NoSuchMethodException e ) { /* The exception will be ignored deliberately */ }
+        catch( final NoSuchMethodException ignored ) { /* The exception will be ignored deliberately */ }
 
         //---* Done *----------------------------------------------------------
         return retValue;
@@ -392,7 +391,7 @@ public final class JavaEngineImpl extends ScriptEngineBase implements JavaEngine
         if( scope != -1 )
         {
             final var obj = context.getAttribute( ARGUMENTS, scope );
-            if( obj instanceof String [] args ) retValue = args;
+            if( obj instanceof final String [] args ) retValue = args;
         }
 
         //---* Done *----------------------------------------------------------
@@ -421,6 +420,7 @@ public final class JavaEngineImpl extends ScriptEngineBase implements JavaEngine
         }
         else
         {
+            //noinspection ConstantExpression
             retValue = getProperty( SYSPROP_PREFIX + CLASSPATH );
             if( isNull( retValue ) ) retValue = getProperty( PROPERTY_CLASSPATH );
         }
@@ -482,7 +482,7 @@ public final class JavaEngineImpl extends ScriptEngineBase implements JavaEngine
     private static String getMainClassName( final ScriptContext context )
     {
         final var scope = requireNonNull( context, "context" ).getAttributesScope( MAINCLASS );
-        @SuppressWarnings( "ConditionalExpressionWithNegatedCondition" )
+        @SuppressWarnings( {"ConditionalExpressionWithNegatedCondition", "ConstantExpression"} )
         final var retValue = scope != -1
             ? context.getAttribute( MAINCLASS, scope ).toString()
             : getProperty( SYSPROP_PREFIX + MAINCLASS );
@@ -530,7 +530,7 @@ public final class JavaEngineImpl extends ScriptEngineBase implements JavaEngine
     private static String getSourcePath( final ScriptContext context )
     {
         final var scope = requireNonNull( context, "context" ).getAttributesScope( SOURCEPATH );
-        @SuppressWarnings( "ConditionalExpressionWithNegatedCondition" )
+        @SuppressWarnings( {"ConditionalExpressionWithNegatedCondition", "ConstantExpression"} )
         final var retValue = scope != -1
             ? context.getAttribute( SOURCEPATH, scope ).toString()
             : getProperty( SYSPROP_PREFIX + SOURCEPATH );
@@ -559,7 +559,7 @@ public final class JavaEngineImpl extends ScriptEngineBase implements JavaEngine
 
         if( isNull( classBytes ) || classBytes.isEmpty() )
         {
-            throw new ScriptException( format( "The compilation of '%1$s' has failed", fileName ) );
+            throw new ScriptException( "The compilation of '%1$s' has failed".formatted( fileName ) );
         }
 
         /*
@@ -576,7 +576,7 @@ public final class JavaEngineImpl extends ScriptEngineBase implements JavaEngine
                 final var mainMethod = findMainMethod( retValue );
                 if( isNull( mainMethod ) )
                 {
-                    throw new ScriptException( format( "The class '%1$s' does not define the method 'main()'", mainClassName ) );
+                    throw new ScriptException( "The class '%1$s' does not define the method 'main()'".formatted( mainClassName ) );
                 }
             }
             else

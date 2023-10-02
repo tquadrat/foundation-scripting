@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- *  Copyright © 2002-2021 by Thomas Thrien.
+ *  Copyright © 2002-2023 by Thomas Thrien.
  *  All Rights Reserved.
  * ============================================================================
  *  Licensed to the public under the agreements of the GNU Lesser General Public
@@ -51,12 +51,12 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *
  *  @author A. Sundararajan
  *  @modified    Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: MemoryJavaFileManager.java 878 2021-02-20 19:56:13Z tquadrat $
+ *  @version $Id: MemoryJavaFileManager.java 1070 2023-09-29 17:09:34Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: MemoryJavaFileManager.java 878 2021-02-20 19:56:13Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: MemoryJavaFileManager.java 1070 2023-09-29 17:09:34Z tquadrat $" )
 @API( status = INTERNAL, since = "0.0.5" )
 public final class MemoryJavaFileManager extends ForwardingJavaFileManager<JavaFileManager>
 {
@@ -68,12 +68,12 @@ public final class MemoryJavaFileManager extends ForwardingJavaFileManager<JavaF
      *
      *  @author A. Sundararajan
      *  @modified    Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: MemoryJavaFileManager.java 878 2021-02-20 19:56:13Z tquadrat $
+     *  @version $Id: MemoryJavaFileManager.java 1070 2023-09-29 17:09:34Z tquadrat $
      *  @since 0.0.5
      *
      *  @UMLGraph.link
      */
-    @ClassVersion( sourceVersion = "$Id: MemoryJavaFileManager.java 878 2021-02-20 19:56:13Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: MemoryJavaFileManager.java 1070 2023-09-29 17:09:34Z tquadrat $" )
     @API( status = INTERNAL, since = "0.0.5" )
     private class ClassOutputBuffer extends SimpleJavaFileObject
     {
@@ -104,13 +104,12 @@ public final class MemoryJavaFileManager extends ForwardingJavaFileManager<JavaF
             \*---------*/
         /**
          *  {@inheritDoc}
-         *
-         *  @see javax.tools.SimpleJavaFileObject#openOutputStream()
          */
         @SuppressWarnings( "InnerClassTooDeeplyNested" )
         @Override
         public OutputStream openOutputStream()
         {
+            @SuppressWarnings( "AnonymousInnerClass" )
             final OutputStream retValue = new FilterOutputStream( new ByteArrayOutputStream() )
             {
                 /**
@@ -138,12 +137,12 @@ public final class MemoryJavaFileManager extends ForwardingJavaFileManager<JavaF
      *
      *  @author A. Sundararajan
      *  @modified    Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: MemoryJavaFileManager.java 878 2021-02-20 19:56:13Z tquadrat $
+     *  @version $Id: MemoryJavaFileManager.java 1070 2023-09-29 17:09:34Z tquadrat $
      *  @since 0.0.5
      *
      *  @UMLGraph.link
      */
-    @ClassVersion( sourceVersion = "$Id: MemoryJavaFileManager.java 878 2021-02-20 19:56:13Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: MemoryJavaFileManager.java 1070 2023-09-29 17:09:34Z tquadrat $" )
     @API( status = INTERNAL, since = "0.0.5" )
     private static class StringInputBuffer extends SimpleJavaFileObject
     {
@@ -175,8 +174,6 @@ public final class MemoryJavaFileManager extends ForwardingJavaFileManager<JavaF
             \*---------*/
         /**
          *  {@inheritDoc}
-         *
-         *  @see javax.tools.SimpleJavaFileObject#getCharContent(boolean)
          */
         @Override
         public CharBuffer getCharContent( final boolean ignoreEncodingErrors ) { return wrap( m_Code ); }
@@ -209,7 +206,6 @@ public final class MemoryJavaFileManager extends ForwardingJavaFileManager<JavaF
      *
      *  @param  parent  The parent file manager.
      */
-    @SuppressWarnings( "resource" )
     public MemoryJavaFileManager( final JavaFileManager parent )
     {
         super( requireNonNull( parent, "parent" ) );
@@ -244,8 +240,6 @@ public final class MemoryJavaFileManager extends ForwardingJavaFileManager<JavaF
 
     /**
      *  {@inheritDoc}
-     *
-     *  @see javax.tools.ForwardingJavaFileManager#getJavaFileForOutput(javax.tools.JavaFileManager.Location, java.lang.String, javax.tools.JavaFileObject.Kind, javax.tools.FileObject)
      */
     @SuppressWarnings( "SwitchStatementWithTooFewBranches" )
     @Override
@@ -266,12 +260,13 @@ public final class MemoryJavaFileManager extends ForwardingJavaFileManager<JavaF
     /**
      *  Creates a
      *  {@link JavaFileObject}
-     *  from the given arguments that will used as the input to {@code javac}.
+     *  from the given arguments that will use as the input to {@code javac}.
      *
      *  @param  name    The file name of the source file.
      *  @param  code    The source code itself.
      *  @return The result source file.
      */
+    @SuppressWarnings( "StaticMethodOnlyUsedInOneClass" )
     public static final JavaFileObject makeStringSource( final String name, final String code )
     {
         final JavaFileObject retValue = new StringInputBuffer( name, code );
@@ -310,7 +305,7 @@ public final class MemoryJavaFileManager extends ForwardingJavaFileManager<JavaF
                 }
                 retValue = URI.create( newUri.toString() );
             }
-            catch( @SuppressWarnings( "unused" ) final RuntimeException e )
+            catch( final RuntimeException ignored )
             {
                 retValue = URI.create( "mfm:///org/tquadrat/foundation/scripting/java/java_source" );
             }

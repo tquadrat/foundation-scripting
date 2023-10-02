@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- *  Copyright © 2002-2021 by Thomas Thrien.
+ *  Copyright © 2002-2023 by Thomas Thrien.
  *  All Rights Reserved.
  * ============================================================================
  *  Licensed to the public under the agreements of the GNU Lesser General Public
@@ -46,12 +46,12 @@ import org.tquadrat.foundation.exception.ImpossibleExceptionError;
  *
  *  @author A. Sundararajan
  *  @modified    Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: MemoryClassLoader.java 878 2021-02-20 19:56:13Z tquadrat $
+ *  @version $Id: MemoryClassLoader.java 1070 2023-09-29 17:09:34Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: MemoryClassLoader.java 878 2021-02-20 19:56:13Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: MemoryClassLoader.java 1070 2023-09-29 17:09:34Z tquadrat $" )
 @API( status = INTERNAL, since = "0.0.5" )
 public final class MemoryClassLoader extends URLClassLoader
 {
@@ -98,8 +98,6 @@ public final class MemoryClassLoader extends URLClassLoader
         \*---------*/
     /**
      *  {@inheritDoc}
-     *
-     *  @see java.net.URLClassLoader#findClass(java.lang.String)
      */
     @Override
     protected final Class<?> findClass( final String className ) throws ClassNotFoundException
@@ -155,6 +153,7 @@ public final class MemoryClassLoader extends URLClassLoader
         {
             String token;
             File file;
+            @SuppressWarnings( "UseOfStringTokenizer" )
             final var tokenizer = new StringTokenizer( classPath, pathSeparator );
             while( tokenizer.hasMoreTokens() )
             {
@@ -177,7 +176,7 @@ public final class MemoryClassLoader extends URLClassLoader
                     {
                         retValue.add( new URL( token ) );
                     }
-                    catch( @SuppressWarnings( "unused" ) final MalformedURLException e )
+                    catch( final MalformedURLException ignored )
                     {
                         /*
                          * Deliberately ignored; if no URL could be generated

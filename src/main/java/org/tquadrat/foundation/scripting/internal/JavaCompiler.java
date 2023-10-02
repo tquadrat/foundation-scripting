@@ -46,12 +46,12 @@ import org.tquadrat.foundation.exception.ImpossibleExceptionError;
  *
  *  @author A. Sundararajan
  *  @modified    Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: JavaCompiler.java 878 2021-02-20 19:56:13Z tquadrat $
+ *  @version $Id: JavaCompiler.java 1070 2023-09-29 17:09:34Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: JavaCompiler.java 878 2021-02-20 19:56:13Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: JavaCompiler.java 1070 2023-09-29 17:09:34Z tquadrat $" )
 @API( status = INTERNAL, since = "0.0.5" )
 public final class JavaCompiler
 {
@@ -97,10 +97,11 @@ public final class JavaCompiler
      *  @param  fileName    The file name that is used for the source origin.
      *  @return The resulting byte code.
      */
-    public final Map<String,byte []> compile( final String source, final String fileName )
+    public final Map<String,byte []> compile( final String fileName, final String source )
     {
+        @SuppressWarnings( {"ImplicitDefaultCharsetUsage", "UseOfSystemOutOrSystemErr"} )
         final var errorOut = new OutputStreamWriter( err );
-        final var retValue = compile( source, fileName, errorOut, null, null );
+        final var retValue = compile( fileName, source, errorOut, null, null );
 
         //---* Done *----------------------------------------------------------
         return retValue;
@@ -186,7 +187,7 @@ public final class JavaCompiler
      *  @param  options  The options for the invocation of {@code javac}.
      *  @return The resulting byte code.
      */
-    @SuppressWarnings( {"resource", "NestedTryStatement"} )
+    @SuppressWarnings( {"NestedTryStatement", "MethodWithTooManyParameters"} )
     private Map<String,byte []> compile( final String fileName, final String source, final Writer errorOut, final String sourcePath, final String classPath, final List<String> options )
     {
         requireNonNullArgument( fileName, "fileName" );

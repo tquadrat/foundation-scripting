@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- *  Copyright © 2002-2021 by Thomas Thrien.
+ *  Copyright © 2002-2023 by Thomas Thrien.
  *  All Rights Reserved.
  * ============================================================================
  *  Licensed to the public under the agreements of the GNU Lesser General Public
@@ -17,6 +17,7 @@
 
 package org.tquadrat.foundation.scripting.factory;
 
+import static java.lang.String.format;
 import static java.lang.System.getProperty;
 import static javax.script.ScriptEngine.ENGINE;
 import static javax.script.ScriptEngine.ENGINE_VERSION;
@@ -29,7 +30,6 @@ import static org.tquadrat.foundation.lang.CommonConstants.PROPERTY_JAVA_VERSION
 import static org.tquadrat.foundation.lang.CommonConstants.PROPERTY_JVM_VERSION;
 import static org.tquadrat.foundation.lang.Objects.nonNull;
 import static org.tquadrat.foundation.lang.Objects.requireNonNullArgument;
-import static org.tquadrat.foundation.util.StringUtils.format;
 import static org.tquadrat.foundation.util.StringUtils.isNotEmpty;
 
 import javax.script.ScriptEngine;
@@ -48,12 +48,12 @@ import org.tquadrat.foundation.scripting.internal.JavaEngineImpl;
  *
  *  @author A. Sundararajan
  *  @modified    Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: JavaEngineFactory.java 878 2021-02-20 19:56:13Z tquadrat $
+ *  @version $Id: JavaEngineFactory.java 1070 2023-09-29 17:09:34Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: JavaEngineFactory.java 878 2021-02-20 19:56:13Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: JavaEngineFactory.java 1070 2023-09-29 17:09:34Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public class JavaEngineFactory implements ScriptEngineFactory
 {
@@ -93,16 +93,19 @@ public class JavaEngineFactory implements ScriptEngineFactory
     /**
      *  The supported extensions of the script files for this engine.
      */
+    @SuppressWarnings( "StaticCollection" )
     private static final List<String> m_Extensions;
 
     /**
      *  The mime types of script file that are recognised by this engine.
      */
+    @SuppressWarnings( "StaticCollection" )
     private static final List<String> m_MimeTypes;
 
     /**
      *  The names of the supported languages.
      */
+    @SuppressWarnings( "StaticCollection" )
     private static final List<String> m_Names;
 
     static
@@ -111,6 +114,14 @@ public class JavaEngineFactory implements ScriptEngineFactory
         m_Extensions = List.of( EXTENSION );
         m_MimeTypes = List.of( "text/x-java-source", "text/java", "text/x-java", "application/ms-java" );
     }
+
+        /*--------------*\
+    ====** Constructors **=====================================================
+        \*--------------*/
+    /**
+     *  Creates a new instance of {@code JavaEngineFactory}.
+     */
+    public JavaEngineFactory() {}
 
         /*---------*\
     ====** Methods **==========================================================
@@ -123,7 +134,7 @@ public class JavaEngineFactory implements ScriptEngineFactory
      */
     private static String getClassName()
     {
-        final var retValue = format( "org_tquadrat_foundation_scripting_java_Main$%1$d", getNextClassNumber() );
+        final var retValue = "org_tquadrat_foundation_scripting_java_Main$%1$d".formatted( getNextClassNumber() );
 
         //---* Done *----------------------------------------------------------
         return retValue;

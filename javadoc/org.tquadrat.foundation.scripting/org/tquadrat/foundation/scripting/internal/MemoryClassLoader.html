@@ -93,7 +93,7 @@ loadScripts(document, 'script');</script>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/Closeable.html" title="class or interface in java.io" class="external-link">Closeable</a></code>, <code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/AutoCloseable.html" title="class or interface in java.lang" class="external-link">AutoCloseable</a></code></dd>
 </dl>
 <hr>
-<div class="type-signature"><span class="annotations">@ClassVersion(sourceVersion="$Id: MemoryClassLoader.java 878 2021-02-20 19:56:13Z tquadrat $")
+<div class="type-signature"><span class="annotations">@ClassVersion(sourceVersion="$Id: MemoryClassLoader.java 1070 2023-09-29 17:09:34Z tquadrat $")
 <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.Status.html#INTERNAL" title="class or interface in org.apiguardian.api" class="external-link">INTERNAL</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/current/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="0.0.5")
 </span><span class="modifiers">public final class </span><span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.scripting/org/tquadrat/foundation/scripting/internal/MemoryClassLoader.html#line-54">MemoryClassLoader</a></span>
@@ -108,7 +108,7 @@ loadScripts(document, 'script');</script>
 <dt><span class="simpleTagLabel">Modified by:</span></dt>
   <dd>Thomas Thrien (<a href="mailto:thomas.thrien@tquadrat.org">thomas.thrien@tquadrat.org</a>)</dd>
 <dt>Version:</dt>
-<dd>$Id: MemoryClassLoader.java 878 2021-02-20 19:56:13Z tquadrat $</dd>
+<dd>$Id: MemoryClassLoader.java 1070 2023-09-29 17:09:34Z tquadrat $</dd>
 <dt>Since:</dt>
 <dd>0.0.5</dd>
 
@@ -280,26 +280,20 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="findClass(java.lang.String)">
 <h3>findClass</h3>
-<div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;?&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.scripting/org/tquadrat/foundation/scripting/internal/MemoryClassLoader.html#line-104">findClass</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;className)</span>
+<div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;?&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.scripting/org/tquadrat/foundation/scripting/internal/MemoryClassLoader.html#line-102">findClass</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;className)</span>
                             throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/ClassNotFoundException.html" title="class or interface in java.lang" class="external-link">ClassNotFoundException</a></span></div>
 <dl class="notes">
 <dt>Overrides:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/net/URLClassLoader.html#findClass(java.lang.String)" title="class or interface in java.net" class="external-link">findClass</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/net/URLClassLoader.html" title="class or interface in java.net" class="external-link">URLClassLoader</a></code></dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/ClassNotFoundException.html" title="class or interface in java.lang" class="external-link">ClassNotFoundException</a></code></dd>
-<dt>See Also:</dt>
-<dd>
-<ul class="see-list-long">
-<li><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/net/URLClassLoader.html#findClass(java.lang.String)" title="class or interface in java.net" class="external-link"><code>URLClassLoader.findClass(java.lang.String)</code></a></li>
-</ul>
-</dd>
 </dl>
 </section>
 </li>
 <li>
 <section class="detail" id="loadAll()">
 <h3>loadAll</h3>
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link">Iterable</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;?&gt;&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.scripting/org/tquadrat/foundation/scripting/internal/MemoryClassLoader.html#line-130">loadAll</a></span>()
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link">Iterable</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;?&gt;&gt;</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.scripting/org/tquadrat/foundation/scripting/internal/MemoryClassLoader.html#line-128">loadAll</a></span>()
                                  throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/ClassNotFoundException.html" title="class or interface in java.lang" class="external-link">ClassNotFoundException</a></span></div>
 <div class="block">Loads all the classes that are loadable by this classloader.</div>
 <dl class="notes">
@@ -313,7 +307,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="toURLs(java.lang.String)">
 <h3>toURLs</h3>
-<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/net/URL.html" title="class or interface in java.net" class="external-link">URL</a>[]</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.scripting/org/tquadrat/foundation/scripting/internal/MemoryClassLoader.html#line-151">toURLs</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;classPath)</span></div>
+<div class="member-signature"><span class="modifiers">private static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/net/URL.html" title="class or interface in java.net" class="external-link">URL</a>[]</span>&nbsp;<span class="element-name"><a href="../../../../../../src-html/org.tquadrat.foundation.scripting/org/tquadrat/foundation/scripting/internal/MemoryClassLoader.html#line-149">toURLs</a></span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;classPath)</span></div>
 <div class="block">Translates the <code>CLASSPATH</code> string into an array of
   <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/net/URL.html" title="class or interface in java.net" class="external-link"><code>URL</code></a>s.</div>
 <dl class="notes">

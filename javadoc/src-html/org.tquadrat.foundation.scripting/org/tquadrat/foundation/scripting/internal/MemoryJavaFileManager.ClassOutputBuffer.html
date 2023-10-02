@@ -13,7 +13,7 @@
 <div class="source-container">
 <pre><span class="source-line-no">001</span><span id="line-1">/*</span>
 <span class="source-line-no">002</span><span id="line-2"> * ============================================================================</span>
-<span class="source-line-no">003</span><span id="line-3"> *  Copyright © 2002-2021 by Thomas Thrien.</span>
+<span class="source-line-no">003</span><span id="line-3"> *  Copyright © 2002-2023 by Thomas Thrien.</span>
 <span class="source-line-no">004</span><span id="line-4"> *  All Rights Reserved.</span>
 <span class="source-line-no">005</span><span id="line-5"> * ============================================================================</span>
 <span class="source-line-no">006</span><span id="line-6"> *  Licensed to the public under the agreements of the GNU Lesser General Public</span>
@@ -64,12 +64,12 @@
 <span class="source-line-no">051</span><span id="line-51"> *</span>
 <span class="source-line-no">052</span><span id="line-52"> *  @author A. Sundararajan</span>
 <span class="source-line-no">053</span><span id="line-53"> *  @modified    Thomas Thrien - thomas.thrien@tquadrat.org</span>
-<span class="source-line-no">054</span><span id="line-54"> *  @version $Id: MemoryJavaFileManager.java 878 2021-02-20 19:56:13Z tquadrat $</span>
+<span class="source-line-no">054</span><span id="line-54"> *  @version $Id: MemoryJavaFileManager.java 1070 2023-09-29 17:09:34Z tquadrat $</span>
 <span class="source-line-no">055</span><span id="line-55"> *  @since 0.0.5</span>
 <span class="source-line-no">056</span><span id="line-56"> *</span>
 <span class="source-line-no">057</span><span id="line-57"> *  @UMLGraph.link</span>
 <span class="source-line-no">058</span><span id="line-58"> */</span>
-<span class="source-line-no">059</span><span id="line-59">@ClassVersion( sourceVersion = "$Id: MemoryJavaFileManager.java 878 2021-02-20 19:56:13Z tquadrat $" )</span>
+<span class="source-line-no">059</span><span id="line-59">@ClassVersion( sourceVersion = "$Id: MemoryJavaFileManager.java 1070 2023-09-29 17:09:34Z tquadrat $" )</span>
 <span class="source-line-no">060</span><span id="line-60">@API( status = INTERNAL, since = "0.0.5" )</span>
 <span class="source-line-no">061</span><span id="line-61">public final class MemoryJavaFileManager extends ForwardingJavaFileManager&lt;JavaFileManager&gt;</span>
 <span class="source-line-no">062</span><span id="line-62">{</span>
@@ -81,12 +81,12 @@
 <span class="source-line-no">068</span><span id="line-68">     *</span>
 <span class="source-line-no">069</span><span id="line-69">     *  @author A. Sundararajan</span>
 <span class="source-line-no">070</span><span id="line-70">     *  @modified    Thomas Thrien - thomas.thrien@tquadrat.org</span>
-<span class="source-line-no">071</span><span id="line-71">     *  @version $Id: MemoryJavaFileManager.java 878 2021-02-20 19:56:13Z tquadrat $</span>
+<span class="source-line-no">071</span><span id="line-71">     *  @version $Id: MemoryJavaFileManager.java 1070 2023-09-29 17:09:34Z tquadrat $</span>
 <span class="source-line-no">072</span><span id="line-72">     *  @since 0.0.5</span>
 <span class="source-line-no">073</span><span id="line-73">     *</span>
 <span class="source-line-no">074</span><span id="line-74">     *  @UMLGraph.link</span>
 <span class="source-line-no">075</span><span id="line-75">     */</span>
-<span class="source-line-no">076</span><span id="line-76">    @ClassVersion( sourceVersion = "$Id: MemoryJavaFileManager.java 878 2021-02-20 19:56:13Z tquadrat $" )</span>
+<span class="source-line-no">076</span><span id="line-76">    @ClassVersion( sourceVersion = "$Id: MemoryJavaFileManager.java 1070 2023-09-29 17:09:34Z tquadrat $" )</span>
 <span class="source-line-no">077</span><span id="line-77">    @API( status = INTERNAL, since = "0.0.5" )</span>
 <span class="source-line-no">078</span><span id="line-78">    private class ClassOutputBuffer extends SimpleJavaFileObject</span>
 <span class="source-line-no">079</span><span id="line-79">    {</span>
@@ -117,227 +117,222 @@
 <span class="source-line-no">104</span><span id="line-104">            \*---------*/</span>
 <span class="source-line-no">105</span><span id="line-105">        /**</span>
 <span class="source-line-no">106</span><span id="line-106">         *  {@inheritDoc}</span>
-<span class="source-line-no">107</span><span id="line-107">         *</span>
-<span class="source-line-no">108</span><span id="line-108">         *  @see javax.tools.SimpleJavaFileObject#openOutputStream()</span>
-<span class="source-line-no">109</span><span id="line-109">         */</span>
-<span class="source-line-no">110</span><span id="line-110">        @SuppressWarnings( "InnerClassTooDeeplyNested" )</span>
-<span class="source-line-no">111</span><span id="line-111">        @Override</span>
-<span class="source-line-no">112</span><span id="line-112">        public OutputStream openOutputStream()</span>
-<span class="source-line-no">113</span><span id="line-113">        {</span>
-<span class="source-line-no">114</span><span id="line-114">            final OutputStream retValue = new FilterOutputStream( new ByteArrayOutputStream() )</span>
-<span class="source-line-no">115</span><span id="line-115">            {</span>
-<span class="source-line-no">116</span><span id="line-116">                /**</span>
-<span class="source-line-no">117</span><span id="line-117">                 *  {@inheritDoc}</span>
-<span class="source-line-no">118</span><span id="line-118">                 *</span>
-<span class="source-line-no">119</span><span id="line-119">                 *  @see java.io.FilterOutputStream#close()</span>
-<span class="source-line-no">120</span><span id="line-120">                 */</span>
-<span class="source-line-no">121</span><span id="line-121">                @Override</span>
-<span class="source-line-no">122</span><span id="line-122">                public void close() throws IOException</span>
-<span class="source-line-no">123</span><span id="line-123">                {</span>
-<span class="source-line-no">124</span><span id="line-124">                    out.close();</span>
-<span class="source-line-no">125</span><span id="line-125">                    final var bos = (ByteArrayOutputStream) out;</span>
-<span class="source-line-no">126</span><span id="line-126">                    m_ClassBytes.put( m_Name, bos.toByteArray() );</span>
-<span class="source-line-no">127</span><span id="line-127">                }</span>
-<span class="source-line-no">128</span><span id="line-128">            };</span>
-<span class="source-line-no">129</span><span id="line-129"></span>
-<span class="source-line-no">130</span><span id="line-130">            //---* Done *------------------------------------------------------</span>
-<span class="source-line-no">131</span><span id="line-131">            return retValue;</span>
-<span class="source-line-no">132</span><span id="line-132">        }   //  openOutputStream()</span>
-<span class="source-line-no">133</span><span id="line-133">    }</span>
-<span class="source-line-no">134</span><span id="line-134">    //  class ClassOutputBuffer</span>
-<span class="source-line-no">135</span><span id="line-135"></span>
-<span class="source-line-no">136</span><span id="line-136">    /**</span>
-<span class="source-line-no">137</span><span id="line-137">     *  A file object used to represent Java source coming from a string.</span>
-<span class="source-line-no">138</span><span id="line-138">     *</span>
-<span class="source-line-no">139</span><span id="line-139">     *  @author A. Sundararajan</span>
-<span class="source-line-no">140</span><span id="line-140">     *  @modified    Thomas Thrien - thomas.thrien@tquadrat.org</span>
-<span class="source-line-no">141</span><span id="line-141">     *  @version $Id: MemoryJavaFileManager.java 878 2021-02-20 19:56:13Z tquadrat $</span>
-<span class="source-line-no">142</span><span id="line-142">     *  @since 0.0.5</span>
-<span class="source-line-no">143</span><span id="line-143">     *</span>
-<span class="source-line-no">144</span><span id="line-144">     *  @UMLGraph.link</span>
-<span class="source-line-no">145</span><span id="line-145">     */</span>
-<span class="source-line-no">146</span><span id="line-146">    @ClassVersion( sourceVersion = "$Id: MemoryJavaFileManager.java 878 2021-02-20 19:56:13Z tquadrat $" )</span>
-<span class="source-line-no">147</span><span id="line-147">    @API( status = INTERNAL, since = "0.0.5" )</span>
-<span class="source-line-no">148</span><span id="line-148">    private static class StringInputBuffer extends SimpleJavaFileObject</span>
-<span class="source-line-no">149</span><span id="line-149">    {</span>
-<span class="source-line-no">150</span><span id="line-150">            /*------------*\</span>
-<span class="source-line-no">151</span><span id="line-151">        ====** Attributes **===================================================</span>
-<span class="source-line-no">152</span><span id="line-152">            \*------------*/</span>
-<span class="source-line-no">153</span><span id="line-153">        /**</span>
-<span class="source-line-no">154</span><span id="line-154">         *  The contents.</span>
-<span class="source-line-no">155</span><span id="line-155">         */</span>
-<span class="source-line-no">156</span><span id="line-156">        private final String m_Code;</span>
-<span class="source-line-no">157</span><span id="line-157"></span>
-<span class="source-line-no">158</span><span id="line-158">            /*--------------*\</span>
-<span class="source-line-no">159</span><span id="line-159">        ====** Constructors **=================================================</span>
-<span class="source-line-no">160</span><span id="line-160">            \*--------------*/</span>
-<span class="source-line-no">161</span><span id="line-161">        /**</span>
-<span class="source-line-no">162</span><span id="line-162">         *  Creates a new {@code StringInputBuffer} instance.</span>
-<span class="source-line-no">163</span><span id="line-163">         *</span>
-<span class="source-line-no">164</span><span id="line-164">         *  @param  name    The name of the &amp;quot;file&amp;quot;.</span>
-<span class="source-line-no">165</span><span id="line-165">         *  @param  code    The source code as the contents.</span>
-<span class="source-line-no">166</span><span id="line-166">         */</span>
-<span class="source-line-no">167</span><span id="line-167">        StringInputBuffer( final String name, final String code )</span>
-<span class="source-line-no">168</span><span id="line-168">        {</span>
-<span class="source-line-no">169</span><span id="line-169">            super( toURI( name ), SOURCE );</span>
-<span class="source-line-no">170</span><span id="line-170">            m_Code = requireNonNullArgument( code, "code" );</span>
-<span class="source-line-no">171</span><span id="line-171">        }   //  StringInputBuffer()</span>
-<span class="source-line-no">172</span><span id="line-172"></span>
-<span class="source-line-no">173</span><span id="line-173">            /*---------*\</span>
-<span class="source-line-no">174</span><span id="line-174">        ====** Methods **======================================================</span>
-<span class="source-line-no">175</span><span id="line-175">            \*---------*/</span>
-<span class="source-line-no">176</span><span id="line-176">        /**</span>
-<span class="source-line-no">177</span><span id="line-177">         *  {@inheritDoc}</span>
-<span class="source-line-no">178</span><span id="line-178">         *</span>
-<span class="source-line-no">179</span><span id="line-179">         *  @see javax.tools.SimpleJavaFileObject#getCharContent(boolean)</span>
-<span class="source-line-no">180</span><span id="line-180">         */</span>
-<span class="source-line-no">181</span><span id="line-181">        @Override</span>
-<span class="source-line-no">182</span><span id="line-182">        public CharBuffer getCharContent( final boolean ignoreEncodingErrors ) { return wrap( m_Code ); }</span>
-<span class="source-line-no">183</span><span id="line-183">    }</span>
-<span class="source-line-no">184</span><span id="line-184">    //  class StringInputBuffer</span>
-<span class="source-line-no">185</span><span id="line-185"></span>
-<span class="source-line-no">186</span><span id="line-186">        /*-----------*\</span>
-<span class="source-line-no">187</span><span id="line-187">    ====** Constants **========================================================</span>
-<span class="source-line-no">188</span><span id="line-188">        \*-----------*/</span>
-<span class="source-line-no">189</span><span id="line-189">    /**</span>
-<span class="source-line-no">190</span><span id="line-190">     *  Java source file extension: {@value}.</span>
-<span class="source-line-no">191</span><span id="line-191">     */</span>
-<span class="source-line-no">192</span><span id="line-192">    private static final String EXT = ".java";</span>
-<span class="source-line-no">193</span><span id="line-193"></span>
-<span class="source-line-no">194</span><span id="line-194">        /*------------*\</span>
-<span class="source-line-no">195</span><span id="line-195">    ====** Attributes **=======================================================</span>
-<span class="source-line-no">196</span><span id="line-196">        \*------------*/</span>
-<span class="source-line-no">197</span><span id="line-197">    /**</span>
-<span class="source-line-no">198</span><span id="line-198">     *  The byte code that is stored by this file manager instance. The name of</span>
-<span class="source-line-no">199</span><span id="line-199">     *  the class is the key to the map, the value is the byte code of that</span>
-<span class="source-line-no">200</span><span id="line-200">     *  class.</span>
-<span class="source-line-no">201</span><span id="line-201">     */</span>
-<span class="source-line-no">202</span><span id="line-202">    private Map&lt;String,byte []&gt; m_ClassBytes = new HashMap&lt;&gt;();</span>
-<span class="source-line-no">203</span><span id="line-203"></span>
-<span class="source-line-no">204</span><span id="line-204">        /*--------------*\</span>
-<span class="source-line-no">205</span><span id="line-205">    ====** Constructors **=====================================================</span>
-<span class="source-line-no">206</span><span id="line-206">        \*--------------*/</span>
-<span class="source-line-no">207</span><span id="line-207">    /**</span>
-<span class="source-line-no">208</span><span id="line-208">     *  Creates a new {@code MemoryJavaFileManager} instance.</span>
-<span class="source-line-no">209</span><span id="line-209">     *</span>
-<span class="source-line-no">210</span><span id="line-210">     *  @param  parent  The parent file manager.</span>
-<span class="source-line-no">211</span><span id="line-211">     */</span>
-<span class="source-line-no">212</span><span id="line-212">    @SuppressWarnings( "resource" )</span>
-<span class="source-line-no">213</span><span id="line-213">    public MemoryJavaFileManager( final JavaFileManager parent )</span>
-<span class="source-line-no">214</span><span id="line-214">    {</span>
-<span class="source-line-no">215</span><span id="line-215">        super( requireNonNull( parent, "parent" ) );</span>
-<span class="source-line-no">216</span><span id="line-216">    }   //  MemoryJavaFileManager()</span>
-<span class="source-line-no">217</span><span id="line-217"></span>
-<span class="source-line-no">218</span><span id="line-218">        /*---------*\</span>
-<span class="source-line-no">219</span><span id="line-219">    ====** Methods **==========================================================</span>
-<span class="source-line-no">220</span><span id="line-220">        \*---------*/</span>
-<span class="source-line-no">221</span><span id="line-221">    /**</span>
-<span class="source-line-no">222</span><span id="line-222">     *  {@inheritDoc}</span>
-<span class="source-line-no">223</span><span id="line-223">     *</span>
-<span class="source-line-no">224</span><span id="line-224">     *  @see javax.tools.ForwardingJavaFileManager#close()</span>
-<span class="source-line-no">225</span><span id="line-225">     */</span>
-<span class="source-line-no">226</span><span id="line-226">    @Override</span>
-<span class="source-line-no">227</span><span id="line-227">    public final void close() throws IOException { m_ClassBytes = new HashMap&lt;&gt;(); }</span>
-<span class="source-line-no">228</span><span id="line-228"></span>
-<span class="source-line-no">229</span><span id="line-229">    /**</span>
-<span class="source-line-no">230</span><span id="line-230">     *  {@inheritDoc}&lt;br&gt;</span>
-<span class="source-line-no">231</span><span id="line-231">     *  &lt;br&gt;This implementation does nothing.</span>
-<span class="source-line-no">232</span><span id="line-232">     *</span>
-<span class="source-line-no">233</span><span id="line-233">     *  @see javax.tools.ForwardingJavaFileManager#flush()</span>
-<span class="source-line-no">234</span><span id="line-234">     */</span>
-<span class="source-line-no">235</span><span id="line-235">    @Override</span>
-<span class="source-line-no">236</span><span id="line-236">    public final void flush() throws IOException { /* Does nothing */ }</span>
-<span class="source-line-no">237</span><span id="line-237"></span>
-<span class="source-line-no">238</span><span id="line-238">    /**</span>
-<span class="source-line-no">239</span><span id="line-239">     *  Returns the classes that are hold in memory.</span>
-<span class="source-line-no">240</span><span id="line-240">     *</span>
-<span class="source-line-no">241</span><span id="line-241">     *  @return The classes.</span>
-<span class="source-line-no">242</span><span id="line-242">     */</span>
-<span class="source-line-no">243</span><span id="line-243">    public final Map&lt;String,byte []&gt; getClassBytes() { return unmodifiableMap( m_ClassBytes ); }</span>
-<span class="source-line-no">244</span><span id="line-244"></span>
-<span class="source-line-no">245</span><span id="line-245">    /**</span>
-<span class="source-line-no">246</span><span id="line-246">     *  {@inheritDoc}</span>
-<span class="source-line-no">247</span><span id="line-247">     *</span>
-<span class="source-line-no">248</span><span id="line-248">     *  @see javax.tools.ForwardingJavaFileManager#getJavaFileForOutput(javax.tools.JavaFileManager.Location, java.lang.String, javax.tools.JavaFileObject.Kind, javax.tools.FileObject)</span>
-<span class="source-line-no">249</span><span id="line-249">     */</span>
-<span class="source-line-no">250</span><span id="line-250">    @SuppressWarnings( "SwitchStatementWithTooFewBranches" )</span>
-<span class="source-line-no">251</span><span id="line-251">    @Override</span>
-<span class="source-line-no">252</span><span id="line-252">    public final JavaFileObject getJavaFileForOutput( final JavaFileManager.Location location, final String className, final Kind kind, final FileObject sibling ) throws IOException</span>
-<span class="source-line-no">253</span><span id="line-253">    {</span>
-<span class="source-line-no">254</span><span id="line-254">        final var retValue = switch( kind )</span>
-<span class="source-line-no">255</span><span id="line-255">        {</span>
-<span class="source-line-no">256</span><span id="line-256">            case CLASS -&gt; new ClassOutputBuffer( className );</span>
-<span class="source-line-no">257</span><span id="line-257"></span>
-<span class="source-line-no">258</span><span id="line-258">            //$CASES-OMITTED$</span>
-<span class="source-line-no">259</span><span id="line-259">            default -&gt; super.getJavaFileForOutput( location, className, kind, sibling );</span>
-<span class="source-line-no">260</span><span id="line-260">        };</span>
-<span class="source-line-no">261</span><span id="line-261"></span>
-<span class="source-line-no">262</span><span id="line-262">        //---* Done *----------------------------------------------------------</span>
-<span class="source-line-no">263</span><span id="line-263">        return retValue;</span>
-<span class="source-line-no">264</span><span id="line-264">    }   //  getJavaFileForOutput()</span>
-<span class="source-line-no">265</span><span id="line-265"></span>
-<span class="source-line-no">266</span><span id="line-266">    /**</span>
-<span class="source-line-no">267</span><span id="line-267">     *  Creates a</span>
-<span class="source-line-no">268</span><span id="line-268">     *  {@link JavaFileObject}</span>
-<span class="source-line-no">269</span><span id="line-269">     *  from the given arguments that will used as the input to {@code javac}.</span>
-<span class="source-line-no">270</span><span id="line-270">     *</span>
-<span class="source-line-no">271</span><span id="line-271">     *  @param  name    The file name of the source file.</span>
-<span class="source-line-no">272</span><span id="line-272">     *  @param  code    The source code itself.</span>
-<span class="source-line-no">273</span><span id="line-273">     *  @return The result source file.</span>
-<span class="source-line-no">274</span><span id="line-274">     */</span>
-<span class="source-line-no">275</span><span id="line-275">    public static final JavaFileObject makeStringSource( final String name, final String code )</span>
-<span class="source-line-no">276</span><span id="line-276">    {</span>
-<span class="source-line-no">277</span><span id="line-277">        final JavaFileObject retValue = new StringInputBuffer( name, code );</span>
-<span class="source-line-no">278</span><span id="line-278"></span>
-<span class="source-line-no">279</span><span id="line-279">        //---* Done *----------------------------------------------------------</span>
-<span class="source-line-no">280</span><span id="line-280">        return retValue;</span>
-<span class="source-line-no">281</span><span id="line-281">    }   //  makeStringSource()</span>
-<span class="source-line-no">282</span><span id="line-282"></span>
-<span class="source-line-no">283</span><span id="line-283">    /**</span>
-<span class="source-line-no">284</span><span id="line-284">     *  Translates the given name to an</span>
-<span class="source-line-no">285</span><span id="line-285">     *  {@link URI}.&lt;br&gt;</span>
-<span class="source-line-no">286</span><span id="line-286">     *  &lt;br&gt;If an error occurs, the default</span>
-<span class="source-line-no">287</span><span id="line-287">     *  &amp;quot;{@code mfm:///org/tquadrat/script/java/java_source}&amp;quot;</span>
-<span class="source-line-no">288</span><span id="line-288">     *  will be returned.</span>
-<span class="source-line-no">289</span><span id="line-289">     *</span>
-<span class="source-line-no">290</span><span id="line-290">     *  @param  name    The name to translate.</span>
-<span class="source-line-no">291</span><span id="line-291">     *  @return The newly generated URI.</span>
-<span class="source-line-no">292</span><span id="line-292">     */</span>
-<span class="source-line-no">293</span><span id="line-293">    static URI toURI( final String name )</span>
-<span class="source-line-no">294</span><span id="line-294">    {</span>
-<span class="source-line-no">295</span><span id="line-295">        URI retValue = null;</span>
-<span class="source-line-no">296</span><span id="line-296">        final var file = new File( requireNonNullArgument( name, "name" ) );</span>
-<span class="source-line-no">297</span><span id="line-297">        if( file.exists() )</span>
-<span class="source-line-no">298</span><span id="line-298">        {</span>
-<span class="source-line-no">299</span><span id="line-299">            retValue = file.toURI();</span>
-<span class="source-line-no">300</span><span id="line-300">        }</span>
-<span class="source-line-no">301</span><span id="line-301">        else</span>
-<span class="source-line-no">302</span><span id="line-302">        {</span>
-<span class="source-line-no">303</span><span id="line-303">            try</span>
-<span class="source-line-no">304</span><span id="line-304">            {</span>
-<span class="source-line-no">305</span><span id="line-305">                final var newUri = new StringBuilder( "mfm:///" )</span>
-<span class="source-line-no">306</span><span id="line-306">                    .append( name.replace( '.', '/' ) );</span>
-<span class="source-line-no">307</span><span id="line-307">                if( name.endsWith( EXT ) )</span>
-<span class="source-line-no">308</span><span id="line-308">                {</span>
-<span class="source-line-no">309</span><span id="line-309">                    newUri.replace( newUri.length() - EXT.length(), newUri.length(), EXT );</span>
-<span class="source-line-no">310</span><span id="line-310">                }</span>
-<span class="source-line-no">311</span><span id="line-311">                retValue = URI.create( newUri.toString() );</span>
-<span class="source-line-no">312</span><span id="line-312">            }</span>
-<span class="source-line-no">313</span><span id="line-313">            catch( @SuppressWarnings( "unused" ) final RuntimeException e )</span>
-<span class="source-line-no">314</span><span id="line-314">            {</span>
-<span class="source-line-no">315</span><span id="line-315">                retValue = URI.create( "mfm:///org/tquadrat/foundation/scripting/java/java_source" );</span>
-<span class="source-line-no">316</span><span id="line-316">            }</span>
-<span class="source-line-no">317</span><span id="line-317">        }</span>
-<span class="source-line-no">318</span><span id="line-318"></span>
-<span class="source-line-no">319</span><span id="line-319">        //---* Done *----------------------------------------------------------</span>
-<span class="source-line-no">320</span><span id="line-320">        return retValue;</span>
-<span class="source-line-no">321</span><span id="line-321">    }   //  toURI()</span>
-<span class="source-line-no">322</span><span id="line-322">}</span>
-<span class="source-line-no">323</span><span id="line-323">//  class MemoryJavaFileManager</span>
-<span class="source-line-no">324</span><span id="line-324"></span>
-<span class="source-line-no">325</span><span id="line-325">/*</span>
-<span class="source-line-no">326</span><span id="line-326"> *  End of File</span>
-<span class="source-line-no">327</span><span id="line-327"> */</span>
+<span class="source-line-no">107</span><span id="line-107">         */</span>
+<span class="source-line-no">108</span><span id="line-108">        @SuppressWarnings( "InnerClassTooDeeplyNested" )</span>
+<span class="source-line-no">109</span><span id="line-109">        @Override</span>
+<span class="source-line-no">110</span><span id="line-110">        public OutputStream openOutputStream()</span>
+<span class="source-line-no">111</span><span id="line-111">        {</span>
+<span class="source-line-no">112</span><span id="line-112">            @SuppressWarnings( "AnonymousInnerClass" )</span>
+<span class="source-line-no">113</span><span id="line-113">            final OutputStream retValue = new FilterOutputStream( new ByteArrayOutputStream() )</span>
+<span class="source-line-no">114</span><span id="line-114">            {</span>
+<span class="source-line-no">115</span><span id="line-115">                /**</span>
+<span class="source-line-no">116</span><span id="line-116">                 *  {@inheritDoc}</span>
+<span class="source-line-no">117</span><span id="line-117">                 *</span>
+<span class="source-line-no">118</span><span id="line-118">                 *  @see java.io.FilterOutputStream#close()</span>
+<span class="source-line-no">119</span><span id="line-119">                 */</span>
+<span class="source-line-no">120</span><span id="line-120">                @Override</span>
+<span class="source-line-no">121</span><span id="line-121">                public void close() throws IOException</span>
+<span class="source-line-no">122</span><span id="line-122">                {</span>
+<span class="source-line-no">123</span><span id="line-123">                    out.close();</span>
+<span class="source-line-no">124</span><span id="line-124">                    final var bos = (ByteArrayOutputStream) out;</span>
+<span class="source-line-no">125</span><span id="line-125">                    m_ClassBytes.put( m_Name, bos.toByteArray() );</span>
+<span class="source-line-no">126</span><span id="line-126">                }</span>
+<span class="source-line-no">127</span><span id="line-127">            };</span>
+<span class="source-line-no">128</span><span id="line-128"></span>
+<span class="source-line-no">129</span><span id="line-129">            //---* Done *------------------------------------------------------</span>
+<span class="source-line-no">130</span><span id="line-130">            return retValue;</span>
+<span class="source-line-no">131</span><span id="line-131">        }   //  openOutputStream()</span>
+<span class="source-line-no">132</span><span id="line-132">    }</span>
+<span class="source-line-no">133</span><span id="line-133">    //  class ClassOutputBuffer</span>
+<span class="source-line-no">134</span><span id="line-134"></span>
+<span class="source-line-no">135</span><span id="line-135">    /**</span>
+<span class="source-line-no">136</span><span id="line-136">     *  A file object used to represent Java source coming from a string.</span>
+<span class="source-line-no">137</span><span id="line-137">     *</span>
+<span class="source-line-no">138</span><span id="line-138">     *  @author A. Sundararajan</span>
+<span class="source-line-no">139</span><span id="line-139">     *  @modified    Thomas Thrien - thomas.thrien@tquadrat.org</span>
+<span class="source-line-no">140</span><span id="line-140">     *  @version $Id: MemoryJavaFileManager.java 1070 2023-09-29 17:09:34Z tquadrat $</span>
+<span class="source-line-no">141</span><span id="line-141">     *  @since 0.0.5</span>
+<span class="source-line-no">142</span><span id="line-142">     *</span>
+<span class="source-line-no">143</span><span id="line-143">     *  @UMLGraph.link</span>
+<span class="source-line-no">144</span><span id="line-144">     */</span>
+<span class="source-line-no">145</span><span id="line-145">    @ClassVersion( sourceVersion = "$Id: MemoryJavaFileManager.java 1070 2023-09-29 17:09:34Z tquadrat $" )</span>
+<span class="source-line-no">146</span><span id="line-146">    @API( status = INTERNAL, since = "0.0.5" )</span>
+<span class="source-line-no">147</span><span id="line-147">    private static class StringInputBuffer extends SimpleJavaFileObject</span>
+<span class="source-line-no">148</span><span id="line-148">    {</span>
+<span class="source-line-no">149</span><span id="line-149">            /*------------*\</span>
+<span class="source-line-no">150</span><span id="line-150">        ====** Attributes **===================================================</span>
+<span class="source-line-no">151</span><span id="line-151">            \*------------*/</span>
+<span class="source-line-no">152</span><span id="line-152">        /**</span>
+<span class="source-line-no">153</span><span id="line-153">         *  The contents.</span>
+<span class="source-line-no">154</span><span id="line-154">         */</span>
+<span class="source-line-no">155</span><span id="line-155">        private final String m_Code;</span>
+<span class="source-line-no">156</span><span id="line-156"></span>
+<span class="source-line-no">157</span><span id="line-157">            /*--------------*\</span>
+<span class="source-line-no">158</span><span id="line-158">        ====** Constructors **=================================================</span>
+<span class="source-line-no">159</span><span id="line-159">            \*--------------*/</span>
+<span class="source-line-no">160</span><span id="line-160">        /**</span>
+<span class="source-line-no">161</span><span id="line-161">         *  Creates a new {@code StringInputBuffer} instance.</span>
+<span class="source-line-no">162</span><span id="line-162">         *</span>
+<span class="source-line-no">163</span><span id="line-163">         *  @param  name    The name of the &amp;quot;file&amp;quot;.</span>
+<span class="source-line-no">164</span><span id="line-164">         *  @param  code    The source code as the contents.</span>
+<span class="source-line-no">165</span><span id="line-165">         */</span>
+<span class="source-line-no">166</span><span id="line-166">        StringInputBuffer( final String name, final String code )</span>
+<span class="source-line-no">167</span><span id="line-167">        {</span>
+<span class="source-line-no">168</span><span id="line-168">            super( toURI( name ), SOURCE );</span>
+<span class="source-line-no">169</span><span id="line-169">            m_Code = requireNonNullArgument( code, "code" );</span>
+<span class="source-line-no">170</span><span id="line-170">        }   //  StringInputBuffer()</span>
+<span class="source-line-no">171</span><span id="line-171"></span>
+<span class="source-line-no">172</span><span id="line-172">            /*---------*\</span>
+<span class="source-line-no">173</span><span id="line-173">        ====** Methods **======================================================</span>
+<span class="source-line-no">174</span><span id="line-174">            \*---------*/</span>
+<span class="source-line-no">175</span><span id="line-175">        /**</span>
+<span class="source-line-no">176</span><span id="line-176">         *  {@inheritDoc}</span>
+<span class="source-line-no">177</span><span id="line-177">         */</span>
+<span class="source-line-no">178</span><span id="line-178">        @Override</span>
+<span class="source-line-no">179</span><span id="line-179">        public CharBuffer getCharContent( final boolean ignoreEncodingErrors ) { return wrap( m_Code ); }</span>
+<span class="source-line-no">180</span><span id="line-180">    }</span>
+<span class="source-line-no">181</span><span id="line-181">    //  class StringInputBuffer</span>
+<span class="source-line-no">182</span><span id="line-182"></span>
+<span class="source-line-no">183</span><span id="line-183">        /*-----------*\</span>
+<span class="source-line-no">184</span><span id="line-184">    ====** Constants **========================================================</span>
+<span class="source-line-no">185</span><span id="line-185">        \*-----------*/</span>
+<span class="source-line-no">186</span><span id="line-186">    /**</span>
+<span class="source-line-no">187</span><span id="line-187">     *  Java source file extension: {@value}.</span>
+<span class="source-line-no">188</span><span id="line-188">     */</span>
+<span class="source-line-no">189</span><span id="line-189">    private static final String EXT = ".java";</span>
+<span class="source-line-no">190</span><span id="line-190"></span>
+<span class="source-line-no">191</span><span id="line-191">        /*------------*\</span>
+<span class="source-line-no">192</span><span id="line-192">    ====** Attributes **=======================================================</span>
+<span class="source-line-no">193</span><span id="line-193">        \*------------*/</span>
+<span class="source-line-no">194</span><span id="line-194">    /**</span>
+<span class="source-line-no">195</span><span id="line-195">     *  The byte code that is stored by this file manager instance. The name of</span>
+<span class="source-line-no">196</span><span id="line-196">     *  the class is the key to the map, the value is the byte code of that</span>
+<span class="source-line-no">197</span><span id="line-197">     *  class.</span>
+<span class="source-line-no">198</span><span id="line-198">     */</span>
+<span class="source-line-no">199</span><span id="line-199">    private Map&lt;String,byte []&gt; m_ClassBytes = new HashMap&lt;&gt;();</span>
+<span class="source-line-no">200</span><span id="line-200"></span>
+<span class="source-line-no">201</span><span id="line-201">        /*--------------*\</span>
+<span class="source-line-no">202</span><span id="line-202">    ====** Constructors **=====================================================</span>
+<span class="source-line-no">203</span><span id="line-203">        \*--------------*/</span>
+<span class="source-line-no">204</span><span id="line-204">    /**</span>
+<span class="source-line-no">205</span><span id="line-205">     *  Creates a new {@code MemoryJavaFileManager} instance.</span>
+<span class="source-line-no">206</span><span id="line-206">     *</span>
+<span class="source-line-no">207</span><span id="line-207">     *  @param  parent  The parent file manager.</span>
+<span class="source-line-no">208</span><span id="line-208">     */</span>
+<span class="source-line-no">209</span><span id="line-209">    public MemoryJavaFileManager( final JavaFileManager parent )</span>
+<span class="source-line-no">210</span><span id="line-210">    {</span>
+<span class="source-line-no">211</span><span id="line-211">        super( requireNonNull( parent, "parent" ) );</span>
+<span class="source-line-no">212</span><span id="line-212">    }   //  MemoryJavaFileManager()</span>
+<span class="source-line-no">213</span><span id="line-213"></span>
+<span class="source-line-no">214</span><span id="line-214">        /*---------*\</span>
+<span class="source-line-no">215</span><span id="line-215">    ====** Methods **==========================================================</span>
+<span class="source-line-no">216</span><span id="line-216">        \*---------*/</span>
+<span class="source-line-no">217</span><span id="line-217">    /**</span>
+<span class="source-line-no">218</span><span id="line-218">     *  {@inheritDoc}</span>
+<span class="source-line-no">219</span><span id="line-219">     *</span>
+<span class="source-line-no">220</span><span id="line-220">     *  @see javax.tools.ForwardingJavaFileManager#close()</span>
+<span class="source-line-no">221</span><span id="line-221">     */</span>
+<span class="source-line-no">222</span><span id="line-222">    @Override</span>
+<span class="source-line-no">223</span><span id="line-223">    public final void close() throws IOException { m_ClassBytes = new HashMap&lt;&gt;(); }</span>
+<span class="source-line-no">224</span><span id="line-224"></span>
+<span class="source-line-no">225</span><span id="line-225">    /**</span>
+<span class="source-line-no">226</span><span id="line-226">     *  {@inheritDoc}&lt;br&gt;</span>
+<span class="source-line-no">227</span><span id="line-227">     *  &lt;br&gt;This implementation does nothing.</span>
+<span class="source-line-no">228</span><span id="line-228">     *</span>
+<span class="source-line-no">229</span><span id="line-229">     *  @see javax.tools.ForwardingJavaFileManager#flush()</span>
+<span class="source-line-no">230</span><span id="line-230">     */</span>
+<span class="source-line-no">231</span><span id="line-231">    @Override</span>
+<span class="source-line-no">232</span><span id="line-232">    public final void flush() throws IOException { /* Does nothing */ }</span>
+<span class="source-line-no">233</span><span id="line-233"></span>
+<span class="source-line-no">234</span><span id="line-234">    /**</span>
+<span class="source-line-no">235</span><span id="line-235">     *  Returns the classes that are hold in memory.</span>
+<span class="source-line-no">236</span><span id="line-236">     *</span>
+<span class="source-line-no">237</span><span id="line-237">     *  @return The classes.</span>
+<span class="source-line-no">238</span><span id="line-238">     */</span>
+<span class="source-line-no">239</span><span id="line-239">    public final Map&lt;String,byte []&gt; getClassBytes() { return unmodifiableMap( m_ClassBytes ); }</span>
+<span class="source-line-no">240</span><span id="line-240"></span>
+<span class="source-line-no">241</span><span id="line-241">    /**</span>
+<span class="source-line-no">242</span><span id="line-242">     *  {@inheritDoc}</span>
+<span class="source-line-no">243</span><span id="line-243">     */</span>
+<span class="source-line-no">244</span><span id="line-244">    @SuppressWarnings( "SwitchStatementWithTooFewBranches" )</span>
+<span class="source-line-no">245</span><span id="line-245">    @Override</span>
+<span class="source-line-no">246</span><span id="line-246">    public final JavaFileObject getJavaFileForOutput( final JavaFileManager.Location location, final String className, final Kind kind, final FileObject sibling ) throws IOException</span>
+<span class="source-line-no">247</span><span id="line-247">    {</span>
+<span class="source-line-no">248</span><span id="line-248">        final var retValue = switch( kind )</span>
+<span class="source-line-no">249</span><span id="line-249">        {</span>
+<span class="source-line-no">250</span><span id="line-250">            case CLASS -&gt; new ClassOutputBuffer( className );</span>
+<span class="source-line-no">251</span><span id="line-251"></span>
+<span class="source-line-no">252</span><span id="line-252">            //$CASES-OMITTED$</span>
+<span class="source-line-no">253</span><span id="line-253">            default -&gt; super.getJavaFileForOutput( location, className, kind, sibling );</span>
+<span class="source-line-no">254</span><span id="line-254">        };</span>
+<span class="source-line-no">255</span><span id="line-255"></span>
+<span class="source-line-no">256</span><span id="line-256">        //---* Done *----------------------------------------------------------</span>
+<span class="source-line-no">257</span><span id="line-257">        return retValue;</span>
+<span class="source-line-no">258</span><span id="line-258">    }   //  getJavaFileForOutput()</span>
+<span class="source-line-no">259</span><span id="line-259"></span>
+<span class="source-line-no">260</span><span id="line-260">    /**</span>
+<span class="source-line-no">261</span><span id="line-261">     *  Creates a</span>
+<span class="source-line-no">262</span><span id="line-262">     *  {@link JavaFileObject}</span>
+<span class="source-line-no">263</span><span id="line-263">     *  from the given arguments that will use as the input to {@code javac}.</span>
+<span class="source-line-no">264</span><span id="line-264">     *</span>
+<span class="source-line-no">265</span><span id="line-265">     *  @param  name    The file name of the source file.</span>
+<span class="source-line-no">266</span><span id="line-266">     *  @param  code    The source code itself.</span>
+<span class="source-line-no">267</span><span id="line-267">     *  @return The result source file.</span>
+<span class="source-line-no">268</span><span id="line-268">     */</span>
+<span class="source-line-no">269</span><span id="line-269">    @SuppressWarnings( "StaticMethodOnlyUsedInOneClass" )</span>
+<span class="source-line-no">270</span><span id="line-270">    public static final JavaFileObject makeStringSource( final String name, final String code )</span>
+<span class="source-line-no">271</span><span id="line-271">    {</span>
+<span class="source-line-no">272</span><span id="line-272">        final JavaFileObject retValue = new StringInputBuffer( name, code );</span>
+<span class="source-line-no">273</span><span id="line-273"></span>
+<span class="source-line-no">274</span><span id="line-274">        //---* Done *----------------------------------------------------------</span>
+<span class="source-line-no">275</span><span id="line-275">        return retValue;</span>
+<span class="source-line-no">276</span><span id="line-276">    }   //  makeStringSource()</span>
+<span class="source-line-no">277</span><span id="line-277"></span>
+<span class="source-line-no">278</span><span id="line-278">    /**</span>
+<span class="source-line-no">279</span><span id="line-279">     *  Translates the given name to an</span>
+<span class="source-line-no">280</span><span id="line-280">     *  {@link URI}.&lt;br&gt;</span>
+<span class="source-line-no">281</span><span id="line-281">     *  &lt;br&gt;If an error occurs, the default</span>
+<span class="source-line-no">282</span><span id="line-282">     *  &amp;quot;{@code mfm:///org/tquadrat/script/java/java_source}&amp;quot;</span>
+<span class="source-line-no">283</span><span id="line-283">     *  will be returned.</span>
+<span class="source-line-no">284</span><span id="line-284">     *</span>
+<span class="source-line-no">285</span><span id="line-285">     *  @param  name    The name to translate.</span>
+<span class="source-line-no">286</span><span id="line-286">     *  @return The newly generated URI.</span>
+<span class="source-line-no">287</span><span id="line-287">     */</span>
+<span class="source-line-no">288</span><span id="line-288">    static URI toURI( final String name )</span>
+<span class="source-line-no">289</span><span id="line-289">    {</span>
+<span class="source-line-no">290</span><span id="line-290">        URI retValue = null;</span>
+<span class="source-line-no">291</span><span id="line-291">        final var file = new File( requireNonNullArgument( name, "name" ) );</span>
+<span class="source-line-no">292</span><span id="line-292">        if( file.exists() )</span>
+<span class="source-line-no">293</span><span id="line-293">        {</span>
+<span class="source-line-no">294</span><span id="line-294">            retValue = file.toURI();</span>
+<span class="source-line-no">295</span><span id="line-295">        }</span>
+<span class="source-line-no">296</span><span id="line-296">        else</span>
+<span class="source-line-no">297</span><span id="line-297">        {</span>
+<span class="source-line-no">298</span><span id="line-298">            try</span>
+<span class="source-line-no">299</span><span id="line-299">            {</span>
+<span class="source-line-no">300</span><span id="line-300">                final var newUri = new StringBuilder( "mfm:///" )</span>
+<span class="source-line-no">301</span><span id="line-301">                    .append( name.replace( '.', '/' ) );</span>
+<span class="source-line-no">302</span><span id="line-302">                if( name.endsWith( EXT ) )</span>
+<span class="source-line-no">303</span><span id="line-303">                {</span>
+<span class="source-line-no">304</span><span id="line-304">                    newUri.replace( newUri.length() - EXT.length(), newUri.length(), EXT );</span>
+<span class="source-line-no">305</span><span id="line-305">                }</span>
+<span class="source-line-no">306</span><span id="line-306">                retValue = URI.create( newUri.toString() );</span>
+<span class="source-line-no">307</span><span id="line-307">            }</span>
+<span class="source-line-no">308</span><span id="line-308">            catch( final RuntimeException ignored )</span>
+<span class="source-line-no">309</span><span id="line-309">            {</span>
+<span class="source-line-no">310</span><span id="line-310">                retValue = URI.create( "mfm:///org/tquadrat/foundation/scripting/java/java_source" );</span>
+<span class="source-line-no">311</span><span id="line-311">            }</span>
+<span class="source-line-no">312</span><span id="line-312">        }</span>
+<span class="source-line-no">313</span><span id="line-313"></span>
+<span class="source-line-no">314</span><span id="line-314">        //---* Done *----------------------------------------------------------</span>
+<span class="source-line-no">315</span><span id="line-315">        return retValue;</span>
+<span class="source-line-no">316</span><span id="line-316">    }   //  toURI()</span>
+<span class="source-line-no">317</span><span id="line-317">}</span>
+<span class="source-line-no">318</span><span id="line-318">//  class MemoryJavaFileManager</span>
+<span class="source-line-no">319</span><span id="line-319"></span>
+<span class="source-line-no">320</span><span id="line-320">/*</span>
+<span class="source-line-no">321</span><span id="line-321"> *  End of File</span>
+<span class="source-line-no">322</span><span id="line-322"> */</span>
 
 
 

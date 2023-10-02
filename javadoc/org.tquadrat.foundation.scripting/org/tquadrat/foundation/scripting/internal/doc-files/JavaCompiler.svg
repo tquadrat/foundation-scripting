@@ -151,7 +151,7 @@
                     <text x='5.000'
                           y='58.000'>+ JavaCompiler()</text>
                     <text x='5.000'
-                          y='69.000'>+ compile(source:java.lang.String,fileName:java.lang.String):java.util.Map&lt;java.lang.String,byte[]&gt;</text>
+                          y='69.000'>+ compile(fileName:java.lang.String,source:java.lang.String):java.util.Map&lt;java.lang.String,byte[]&gt;</text>
                     <text x='5.000'
                           y='80.000'>+ compile(fileName:java.lang.String,source:java.lang.String,errorOut:java.io.Writer):java.util.Map&lt;java.lang.String,byte[]&gt;</text>
                     <text x='5.000'
