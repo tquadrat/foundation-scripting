@@ -20,6 +20,7 @@ package org.tquadrat.foundation.scripting.java;
 import static java.io.OutputStream.nullOutputStream;
 import static java.io.Reader.nullReader;
 import static java.io.Writer.nullWriter;
+import static java.lang.String.format;
 import static java.lang.System.getProperty;
 import static java.lang.System.setErr;
 import static javax.script.ScriptContext.ENGINE_SCOPE;
@@ -44,7 +45,6 @@ import static org.tquadrat.foundation.scripting.java.JavaEngine.CLASSPATH;
 import static org.tquadrat.foundation.scripting.java.JavaEngine.MAINCLASS;
 import static org.tquadrat.foundation.scripting.java.JavaEngine.PARENTLOADER;
 import static org.tquadrat.foundation.scripting.java.JavaEngine.SOURCEPATH;
-import static org.tquadrat.foundation.util.StringUtils.format;
 
 import javax.script.CompiledScript;
 import javax.script.ScriptContext;
@@ -69,9 +69,9 @@ import org.tquadrat.foundation.testutil.TestBaseClass;
  *  {@link JavaEngineFactory}.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: TestJavaEngine.java 1041 2022-12-18 22:14:52Z tquadrat $
+ *  @version $Id: TestJavaEngine.java 1076 2023-10-03 18:36:07Z tquadrat $
  */
-@ClassVersion( sourceVersion = "$Id: TestJavaEngine.java 1041 2022-12-18 22:14:52Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: TestJavaEngine.java 1076 2023-10-03 18:36:07Z tquadrat $" )
 public class TestJavaEngine extends TestBaseClass
 {
         /*---------*\
