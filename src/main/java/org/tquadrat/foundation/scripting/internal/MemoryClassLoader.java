@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- *  Copyright © 2002-2023 by Thomas Thrien.
+ *  Copyright © 2002-2025 by Thomas Thrien.
  *  All Rights Reserved.
  * ============================================================================
  *  Licensed to the public under the agreements of the GNU Lesser General Public
@@ -26,6 +26,8 @@ import static org.tquadrat.foundation.util.StringUtils.isNotEmpty;
 
 import java.io.File;
 import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.util.ArrayList;
@@ -46,12 +48,12 @@ import org.tquadrat.foundation.exception.ImpossibleExceptionError;
  *
  *  @author A. Sundararajan
  *  @modified    Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: MemoryClassLoader.java 1070 2023-09-29 17:09:34Z tquadrat $
+ *  @version $Id: MemoryClassLoader.java 1151 2025-10-01 21:32:15Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: MemoryClassLoader.java 1070 2023-09-29 17:09:34Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: MemoryClassLoader.java 1151 2025-10-01 21:32:15Z tquadrat $" )
 @API( status = INTERNAL, since = "0.0.5" )
 public final class MemoryClassLoader extends URLClassLoader
 {
@@ -174,9 +176,9 @@ public final class MemoryClassLoader extends URLClassLoader
                 {
                     try
                     {
-                        retValue.add( new URL( token ) );
+                        retValue.add( new URI( token ).toURL() );
                     }
-                    catch( final MalformedURLException ignored )
+                    catch( final MalformedURLException | URISyntaxException _ )
                     {
                         /*
                          * Deliberately ignored; if no URL could be generated
