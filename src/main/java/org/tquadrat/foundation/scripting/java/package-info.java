@@ -18,7 +18,7 @@
 /**
  *  <p>{@summary A script engine for Java as a JSR-223 compliant embedded
  *  script language.}</p>
- *  <p>Unless otherwise stated, {@code null} argument values will cause
+ *  <p>Unless otherwise stated, {@null} argument values will cause
  *  methods and constructors of all classes in this package to throw an
  *  {@link java.lang.Exception Exception},
  *  usually a

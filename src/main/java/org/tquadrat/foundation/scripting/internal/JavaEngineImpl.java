@@ -52,12 +52,12 @@ import org.tquadrat.foundation.scripting.spi.ScriptEngineBase;
  *
  *  @author A. Sundararajan
  *  @modified    Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: JavaEngineImpl.java 1070 2023-09-29 17:09:34Z tquadrat $
+ *  @version $Id: JavaEngineImpl.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: JavaEngineImpl.java 1070 2023-09-29 17:09:34Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: JavaEngineImpl.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = STABLE, since = "0.0.5" )
 public final class JavaEngineImpl extends ScriptEngineBase implements JavaEngine
 {
@@ -71,12 +71,12 @@ public final class JavaEngineImpl extends ScriptEngineBase implements JavaEngine
      *
      *  @author A. Sundararajan
      *  @modified    Thomas Thrien - thomas.thrien@tquadrat.org
-     *  @version $Id: JavaEngineImpl.java 1070 2023-09-29 17:09:34Z tquadrat $
+     *  @version $Id: JavaEngineImpl.java 1258 2026-06-04 18:33:06Z tquadrat $
      *  @since 0.0.5
      *
      *  @UMLGraph.link
      */
-    @ClassVersion( sourceVersion = "$Id: JavaEngineImpl.java 1070 2023-09-29 17:09:34Z tquadrat $" )
+    @ClassVersion( sourceVersion = "$Id: JavaEngineImpl.java 1258 2026-06-04 18:33:06Z tquadrat $" )
     public final class JavaCompiledScriptImpl extends JavaCompiledScript
     {
             /*--------------*\
@@ -220,10 +220,10 @@ public final class JavaEngineImpl extends ScriptEngineBase implements JavaEngine
     /**
      *  Executes the code defined in the Java class that makes up this script.
      *
-     *  @param  scriptClass The script class; may be {@code null}.
+     *  @param  scriptClass The script class; may be {@null}.
      *  @param  context The script context.
      *  @return The script class; if the {@code scriptClass} is
-     *      {@code null}, the return value is {@code null}, too.
+     *      {@null}, the return value is {@null}, too.
      *  @throws ScriptException The script throws an exception.
      */
     private static final Object evalClass( final Class<?> scriptClass, final ScriptContext context ) throws ScriptException
@@ -285,7 +285,7 @@ public final class JavaEngineImpl extends ScriptEngineBase implements JavaEngine
      *  is that one that has a method {@code main(String[])}.
      *
      *  @param  classes The candidates.
-     *  @return The main class, or {@code null} if none could be found.
+     *  @return The main class, or {@null} if none could be found.
      */
     private static Class<?> findMainClass( final Iterable<Class<?>> classes )
     {
@@ -328,7 +328,7 @@ public final class JavaEngineImpl extends ScriptEngineBase implements JavaEngine
      *  Looks up the method {@code main(String[])} from the script class.
      *
      *  @param  clazz   The class to search.
-     *  @return The {@code main()} method, or {@code null} if the class
+     *  @return The {@code main()} method, or {@null} if the class
      *      does not contain such a method.
      */
     private static Method findMainMethod( final Class<?> clazz )
@@ -355,7 +355,7 @@ public final class JavaEngineImpl extends ScriptEngineBase implements JavaEngine
      *  script call.
      *
      *  @param  clazz   The class to search.
-     *  @return The {@code setScriptContext()} method, or {@code null} if
+     *  @return The {@code setScriptContext()} method, or {@null} if
      *      the class does not contain such a method.
      */
     private static Method findSetScriptContextMethod( final Class<?> clazz )
@@ -404,7 +404,7 @@ public final class JavaEngineImpl extends ScriptEngineBase implements JavaEngine
      *  system property with the name {@code com.sun.script.java.classpath}.
      *
      *  @param  context The script context.
-     *  @return The classpath, or {@code null} if no classpath could be
+     *  @return The classpath, or {@null} if no classpath could be
      *      retrieved.
      *
      *  @see #CLASSPATH
@@ -473,7 +473,7 @@ public final class JavaEngineImpl extends ScriptEngineBase implements JavaEngine
      *  or from the system properties.
      *
      *  @param  context The script context.
-     *  @return The name of the main class, or {@code null} if it could
+     *  @return The name of the main class, or {@null} if it could
      *      not be found.
      *
      *  @see #MAINCLASS
@@ -497,7 +497,7 @@ public final class JavaEngineImpl extends ScriptEngineBase implements JavaEngine
      *  from the provided context.
      *
      *  @param  context The script context.
-     *  @return The parent classloader for the script, or {@code null} if
+     *  @return The parent classloader for the script, or {@null} if
      *      none was defined in the context.
      */
     private static ClassLoader getParentLoader( final ScriptContext context )
@@ -522,7 +522,7 @@ public final class JavaEngineImpl extends ScriptEngineBase implements JavaEngine
      *  properties.
      *
      *  @param  context The script context.
-     *  @return The sourcepath or {@code null} if none is defined.
+     *  @return The sourcepath or {@null} if none is defined.
      *
      *  @see #SOURCEPATH
      *  @see #SYSPROP_PREFIX
@@ -546,7 +546,7 @@ public final class JavaEngineImpl extends ScriptEngineBase implements JavaEngine
      *  @param  script  The script source.
      *  @param  scriptContext   The script context.
      *  @return The class that is used to start the script, or
-     *      {@code null} if that could not be found.
+     *      {@null} if that could not be found.
      *  @throws ScriptException The script could not be successfully parsed.
      */
     private Class<?> parse( final String script, final ScriptContext scriptContext ) throws ScriptException

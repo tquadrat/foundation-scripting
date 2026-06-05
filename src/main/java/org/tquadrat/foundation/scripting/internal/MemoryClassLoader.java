@@ -48,12 +48,12 @@ import org.tquadrat.foundation.exception.ImpossibleExceptionError;
  *
  *  @author A. Sundararajan
  *  @modified    Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: MemoryClassLoader.java 1151 2025-10-01 21:32:15Z tquadrat $
+ *  @version $Id: MemoryClassLoader.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: MemoryClassLoader.java 1151 2025-10-01 21:32:15Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: MemoryClassLoader.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = INTERNAL, since = "0.0.5" )
 public final class MemoryClassLoader extends URLClassLoader
 {
@@ -76,7 +76,7 @@ public final class MemoryClassLoader extends URLClassLoader
      *
      *  @param  classBytes  The reference for the buffer with the byte code.
      *  @param  classPath   The {@code CLASSPATH}.
-     *  @param  parent  The parent class loader; can be {@code null}.
+     *  @param  parent  The parent class loader; can be {@null}.
      */
     public MemoryClassLoader( final Map<String,byte []> classBytes, final String classPath, final ClassLoader parent )
     {

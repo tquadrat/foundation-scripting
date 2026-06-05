@@ -65,12 +65,12 @@
 <span class="source-line-no">052</span><span id="line-52"> *</span>
 <span class="source-line-no">053</span><span id="line-53"> *  @author A. Sundararajan</span>
 <span class="source-line-no">054</span><span id="line-54"> *  @modified    Thomas Thrien - thomas.thrien@tquadrat.org</span>
-<span class="source-line-no">055</span><span id="line-55"> *  @version $Id: JavaEngineImpl.java 1070 2023-09-29 17:09:34Z tquadrat $</span>
+<span class="source-line-no">055</span><span id="line-55"> *  @version $Id: JavaEngineImpl.java 1258 2026-06-04 18:33:06Z tquadrat $</span>
 <span class="source-line-no">056</span><span id="line-56"> *  @since 0.0.5</span>
 <span class="source-line-no">057</span><span id="line-57"> *</span>
 <span class="source-line-no">058</span><span id="line-58"> *  @UMLGraph.link</span>
 <span class="source-line-no">059</span><span id="line-59"> */</span>
-<span class="source-line-no">060</span><span id="line-60">@ClassVersion( sourceVersion = "$Id: JavaEngineImpl.java 1070 2023-09-29 17:09:34Z tquadrat $" )</span>
+<span class="source-line-no">060</span><span id="line-60">@ClassVersion( sourceVersion = "$Id: JavaEngineImpl.java 1258 2026-06-04 18:33:06Z tquadrat $" )</span>
 <span class="source-line-no">061</span><span id="line-61">@API( status = STABLE, since = "0.0.5" )</span>
 <span class="source-line-no">062</span><span id="line-62">public final class JavaEngineImpl extends ScriptEngineBase implements JavaEngine</span>
 <span class="source-line-no">063</span><span id="line-63">{</span>
@@ -84,12 +84,12 @@
 <span class="source-line-no">071</span><span id="line-71">     *</span>
 <span class="source-line-no">072</span><span id="line-72">     *  @author A. Sundararajan</span>
 <span class="source-line-no">073</span><span id="line-73">     *  @modified    Thomas Thrien - thomas.thrien@tquadrat.org</span>
-<span class="source-line-no">074</span><span id="line-74">     *  @version $Id: JavaEngineImpl.java 1070 2023-09-29 17:09:34Z tquadrat $</span>
+<span class="source-line-no">074</span><span id="line-74">     *  @version $Id: JavaEngineImpl.java 1258 2026-06-04 18:33:06Z tquadrat $</span>
 <span class="source-line-no">075</span><span id="line-75">     *  @since 0.0.5</span>
 <span class="source-line-no">076</span><span id="line-76">     *</span>
 <span class="source-line-no">077</span><span id="line-77">     *  @UMLGraph.link</span>
 <span class="source-line-no">078</span><span id="line-78">     */</span>
-<span class="source-line-no">079</span><span id="line-79">    @ClassVersion( sourceVersion = "$Id: JavaEngineImpl.java 1070 2023-09-29 17:09:34Z tquadrat $" )</span>
+<span class="source-line-no">079</span><span id="line-79">    @ClassVersion( sourceVersion = "$Id: JavaEngineImpl.java 1258 2026-06-04 18:33:06Z tquadrat $" )</span>
 <span class="source-line-no">080</span><span id="line-80">    public final class JavaCompiledScriptImpl extends JavaCompiledScript</span>
 <span class="source-line-no">081</span><span id="line-81">    {</span>
 <span class="source-line-no">082</span><span id="line-82">            /*--------------*\</span>
@@ -233,10 +233,10 @@
 <span class="source-line-no">220</span><span id="line-220">    /**</span>
 <span class="source-line-no">221</span><span id="line-221">     *  Executes the code defined in the Java class that makes up this script.</span>
 <span class="source-line-no">222</span><span id="line-222">     *</span>
-<span class="source-line-no">223</span><span id="line-223">     *  @param  scriptClass The script class; may be {@code null}.</span>
+<span class="source-line-no">223</span><span id="line-223">     *  @param  scriptClass The script class; may be {@null}.</span>
 <span class="source-line-no">224</span><span id="line-224">     *  @param  context The script context.</span>
 <span class="source-line-no">225</span><span id="line-225">     *  @return The script class; if the {@code scriptClass} is</span>
-<span class="source-line-no">226</span><span id="line-226">     *      {@code null}, the return value is {@code null}, too.</span>
+<span class="source-line-no">226</span><span id="line-226">     *      {@null}, the return value is {@null}, too.</span>
 <span class="source-line-no">227</span><span id="line-227">     *  @throws ScriptException The script throws an exception.</span>
 <span class="source-line-no">228</span><span id="line-228">     */</span>
 <span class="source-line-no">229</span><span id="line-229">    private static final Object evalClass( final Class&lt;?&gt; scriptClass, final ScriptContext context ) throws ScriptException</span>
@@ -298,7 +298,7 @@
 <span class="source-line-no">285</span><span id="line-285">     *  is that one that has a method {@code main(String[])}.</span>
 <span class="source-line-no">286</span><span id="line-286">     *</span>
 <span class="source-line-no">287</span><span id="line-287">     *  @param  classes The candidates.</span>
-<span class="source-line-no">288</span><span id="line-288">     *  @return The main class, or {@code null} if none could be found.</span>
+<span class="source-line-no">288</span><span id="line-288">     *  @return The main class, or {@null} if none could be found.</span>
 <span class="source-line-no">289</span><span id="line-289">     */</span>
 <span class="source-line-no">290</span><span id="line-290">    private static Class&lt;?&gt; findMainClass( final Iterable&lt;Class&lt;?&gt;&gt; classes )</span>
 <span class="source-line-no">291</span><span id="line-291">    {</span>
@@ -341,7 +341,7 @@
 <span class="source-line-no">328</span><span id="line-328">     *  Looks up the method {@code main(String[])} from the script class.</span>
 <span class="source-line-no">329</span><span id="line-329">     *</span>
 <span class="source-line-no">330</span><span id="line-330">     *  @param  clazz   The class to search.</span>
-<span class="source-line-no">331</span><span id="line-331">     *  @return The {@code main()} method, or {@code null} if the class</span>
+<span class="source-line-no">331</span><span id="line-331">     *  @return The {@code main()} method, or {@null} if the class</span>
 <span class="source-line-no">332</span><span id="line-332">     *      does not contain such a method.</span>
 <span class="source-line-no">333</span><span id="line-333">     */</span>
 <span class="source-line-no">334</span><span id="line-334">    private static Method findMainMethod( final Class&lt;?&gt; clazz )</span>
@@ -368,7 +368,7 @@
 <span class="source-line-no">355</span><span id="line-355">     *  script call.</span>
 <span class="source-line-no">356</span><span id="line-356">     *</span>
 <span class="source-line-no">357</span><span id="line-357">     *  @param  clazz   The class to search.</span>
-<span class="source-line-no">358</span><span id="line-358">     *  @return The {@code setScriptContext()} method, or {@code null} if</span>
+<span class="source-line-no">358</span><span id="line-358">     *  @return The {@code setScriptContext()} method, or {@null} if</span>
 <span class="source-line-no">359</span><span id="line-359">     *      the class does not contain such a method.</span>
 <span class="source-line-no">360</span><span id="line-360">     */</span>
 <span class="source-line-no">361</span><span id="line-361">    private static Method findSetScriptContextMethod( final Class&lt;?&gt; clazz )</span>
@@ -417,7 +417,7 @@
 <span class="source-line-no">404</span><span id="line-404">     *  system property with the name {@code com.sun.script.java.classpath}.</span>
 <span class="source-line-no">405</span><span id="line-405">     *</span>
 <span class="source-line-no">406</span><span id="line-406">     *  @param  context The script context.</span>
-<span class="source-line-no">407</span><span id="line-407">     *  @return The classpath, or {@code null} if no classpath could be</span>
+<span class="source-line-no">407</span><span id="line-407">     *  @return The classpath, or {@null} if no classpath could be</span>
 <span class="source-line-no">408</span><span id="line-408">     *      retrieved.</span>
 <span class="source-line-no">409</span><span id="line-409">     *</span>
 <span class="source-line-no">410</span><span id="line-410">     *  @see #CLASSPATH</span>
@@ -486,7 +486,7 @@
 <span class="source-line-no">473</span><span id="line-473">     *  or from the system properties.</span>
 <span class="source-line-no">474</span><span id="line-474">     *</span>
 <span class="source-line-no">475</span><span id="line-475">     *  @param  context The script context.</span>
-<span class="source-line-no">476</span><span id="line-476">     *  @return The name of the main class, or {@code null} if it could</span>
+<span class="source-line-no">476</span><span id="line-476">     *  @return The name of the main class, or {@null} if it could</span>
 <span class="source-line-no">477</span><span id="line-477">     *      not be found.</span>
 <span class="source-line-no">478</span><span id="line-478">     *</span>
 <span class="source-line-no">479</span><span id="line-479">     *  @see #MAINCLASS</span>
@@ -510,7 +510,7 @@
 <span class="source-line-no">497</span><span id="line-497">     *  from the provided context.</span>
 <span class="source-line-no">498</span><span id="line-498">     *</span>
 <span class="source-line-no">499</span><span id="line-499">     *  @param  context The script context.</span>
-<span class="source-line-no">500</span><span id="line-500">     *  @return The parent classloader for the script, or {@code null} if</span>
+<span class="source-line-no">500</span><span id="line-500">     *  @return The parent classloader for the script, or {@null} if</span>
 <span class="source-line-no">501</span><span id="line-501">     *      none was defined in the context.</span>
 <span class="source-line-no">502</span><span id="line-502">     */</span>
 <span class="source-line-no">503</span><span id="line-503">    private static ClassLoader getParentLoader( final ScriptContext context )</span>
@@ -535,7 +535,7 @@
 <span class="source-line-no">522</span><span id="line-522">     *  properties.</span>
 <span class="source-line-no">523</span><span id="line-523">     *</span>
 <span class="source-line-no">524</span><span id="line-524">     *  @param  context The script context.</span>
-<span class="source-line-no">525</span><span id="line-525">     *  @return The sourcepath or {@code null} if none is defined.</span>
+<span class="source-line-no">525</span><span id="line-525">     *  @return The sourcepath or {@null} if none is defined.</span>
 <span class="source-line-no">526</span><span id="line-526">     *</span>
 <span class="source-line-no">527</span><span id="line-527">     *  @see #SOURCEPATH</span>
 <span class="source-line-no">528</span><span id="line-528">     *  @see #SYSPROP_PREFIX</span>
@@ -559,7 +559,7 @@
 <span class="source-line-no">546</span><span id="line-546">     *  @param  script  The script source.</span>
 <span class="source-line-no">547</span><span id="line-547">     *  @param  scriptContext   The script context.</span>
 <span class="source-line-no">548</span><span id="line-548">     *  @return The class that is used to start the script, or</span>
-<span class="source-line-no">549</span><span id="line-549">     *      {@code null} if that could not be found.</span>
+<span class="source-line-no">549</span><span id="line-549">     *      {@null} if that could not be found.</span>
 <span class="source-line-no">550</span><span id="line-550">     *  @throws ScriptException The script could not be successfully parsed.</span>
 <span class="source-line-no">551</span><span id="line-551">     */</span>
 <span class="source-line-no">552</span><span id="line-552">    private Class&lt;?&gt; parse( final String script, final ScriptContext scriptContext ) throws ScriptException</span>

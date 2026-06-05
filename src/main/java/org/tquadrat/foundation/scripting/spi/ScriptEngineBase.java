@@ -40,12 +40,12 @@ import org.tquadrat.foundation.annotation.ClassVersion;
  *  it will provide some additional methods for convenience.
  *
  *  @extauthor Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: ScriptEngineBase.java 1070 2023-09-29 17:09:34Z tquadrat $
+ *  @version $Id: ScriptEngineBase.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: ScriptEngineBase.java 1070 2023-09-29 17:09:34Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: ScriptEngineBase.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = INTERNAL, since = "0.0.5" )
 public abstract class ScriptEngineBase extends AbstractScriptEngine
 {
@@ -62,7 +62,7 @@ public abstract class ScriptEngineBase extends AbstractScriptEngine
     ====** Attributes **=======================================================
         \*------------*/
     /**
-     *  The factory that created this engine; may be {@code null}
+     *  The factory that created this engine; may be {@null}
      */
     private volatile ScriptEngineFactory m_EngineFactory;
 
@@ -78,7 +78,7 @@ public abstract class ScriptEngineBase extends AbstractScriptEngine
      *  Creates a new {@code ScriptEngineBase} instance.
      *
      *  @param  factory The reference to the engine factory; may be
-     *      {@code null}.
+     *      {@null}.
      */
     protected ScriptEngineBase( final ScriptEngineFactory factory )
     {
@@ -133,7 +133,7 @@ public abstract class ScriptEngineBase extends AbstractScriptEngine
     /**
      *  Sets a new script factory.
      *
-     *  @param  factory The new factory; can be {@code null}.
+     *  @param  factory The new factory; can be {@null}.
      */
     public final synchronized void setFactory( final ScriptEngineFactory factory ) { m_EngineFactory = factory; }
 }

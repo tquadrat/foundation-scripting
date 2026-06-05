@@ -46,12 +46,12 @@ import org.tquadrat.foundation.exception.ImpossibleExceptionError;
  *
  *  @author A. Sundararajan
  *  @modified    Thomas Thrien - thomas.thrien@tquadrat.org
- *  @version $Id: JavaCompiler.java 1070 2023-09-29 17:09:34Z tquadrat $
+ *  @version $Id: JavaCompiler.java 1258 2026-06-04 18:33:06Z tquadrat $
  *  @since 0.0.5
  *
  *  @UMLGraph.link
  */
-@ClassVersion( sourceVersion = "$Id: JavaCompiler.java 1070 2023-09-29 17:09:34Z tquadrat $" )
+@ClassVersion( sourceVersion = "$Id: JavaCompiler.java 1258 2026-06-04 18:33:06Z tquadrat $" )
 @API( status = INTERNAL, since = "0.0.5" )
 public final class JavaCompiler
 {
@@ -153,10 +153,10 @@ public final class JavaCompiler
      *  @param  errorOut    The destination for any error messages.
      *  @param  sourcePath  The location of additional {@code *.java} source
      *      files; multiple folder names have to be separated with colons
-     *      (':'). May be {@code null}.
+     *      (':'). May be {@null}.
      *  @param  classPath   The location of additional {@code *.class} files;
      *      multiple folder names have to be separated with colons. May be
-     *      {@code null}.
+     *      {@null}.
      *  @return The resulting byte code.
      */
     public final Map<String,byte []> compile( final String fileName, final String source, final Writer errorOut, final String sourcePath, final String classPath )
@@ -180,10 +180,10 @@ public final class JavaCompiler
      *  @param  errorOut    The destination for any error messages.
      *  @param  sourcePath  The location of additional {@code *.java} source
      *      files; multiple folder names have to be separated with colons
-     *      (':'). May be {@code null}.
+     *      (':'). May be {@null}.
      *  @param  classPath   The location of additional {@code *.class} files;
      *      multiple folder names have to be separated with colons
-     *      (':'). May be {@code null}.
+     *      (':'). May be {@null}.
      *  @param  options  The options for the invocation of {@code javac}.
      *  @return The resulting byte code.
      */
