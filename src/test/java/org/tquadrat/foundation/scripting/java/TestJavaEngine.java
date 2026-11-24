@@ -32,6 +32,7 @@ import static javax.script.ScriptEngine.LANGUAGE_VERSION;
 import static org.easymock.EasyMock.expect;
 import static org.easymock.EasyMock.expectLastCall;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertInstanceOf;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
@@ -58,7 +59,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.tquadrat.foundation.annotation.ClassVersion;
 import org.tquadrat.foundation.exception.NullArgumentException;
-import org.tquadrat.foundation.exception.ValidationException;
 import org.tquadrat.foundation.scripting.factory.JavaEngineFactory;
 import org.tquadrat.foundation.testutil.TestBaseClass;
 
@@ -143,7 +143,7 @@ public class TestJavaEngine extends TestBaseClass
 
         final var engine = factory.getScriptEngine();
         assertNotNull( engine );
-        assertTrue( engine instanceof JavaEngine );
+        assertInstanceOf( JavaEngine.class, engine );
 
         //---* getMethodCallSyntax() *-----------------------------------------
         final Class<? extends Throwable> expectedException = NullArgumentException.class;
@@ -218,7 +218,7 @@ public class TestJavaEngine extends TestBaseClass
 
         final var eng = factory.getScriptEngine();
         assertNotNull( eng );
-        assertTrue( eng instanceof JavaEngine );
+        assertInstanceOf( JavaEngine.class, eng );
         final var engine = (JavaEngine) eng;
 
         final var bindings = engine.createBindings();
@@ -231,10 +231,10 @@ public class TestJavaEngine extends TestBaseClass
         final var reader = nullReader();
         final var string = EMPTY_STRING;
 
-        assertThrows( ValidationException.class, () -> engine.compile( (Reader) null ) );
-        assertThrows( ValidationException.class, () -> engine.compile( (String) null ) );
-        assertThrows( ValidationException.class, () -> engine.eval( (Reader) null ) );
-        assertThrows( ValidationException.class, () -> engine.eval( (String) null ) );
+        assertThrows( IllegalArgumentException.class, () -> engine.compile( (Reader) null ) );
+        assertThrows( IllegalArgumentException.class, () -> engine.compile( (String) null ) );
+        assertThrows( IllegalArgumentException.class, () -> engine.eval( (Reader) null ) );
+        assertThrows( IllegalArgumentException.class, () -> engine.eval( (String) null ) );
 
         assertThrows( ScriptException.class, () -> engine.compile( nullReader() ) );
         assertThrows( ScriptException.class, () -> engine.compile( EMPTY_STRING ) );
@@ -242,12 +242,12 @@ public class TestJavaEngine extends TestBaseClass
         final ScriptContext scriptContext = createMock( ScriptContext.class );
         replayAll();
 
-        assertThrows( ValidationException.class, () -> engine.eval( (Reader) null, scriptContext ) );
-        assertThrows( ValidationException.class, () -> engine.eval( (String) null, scriptContext ) );
+        assertThrows( IllegalArgumentException.class, () -> engine.eval( (Reader) null, scriptContext ) );
+        assertThrows( IllegalArgumentException.class, () -> engine.eval( (String) null, scriptContext ) );
         resetAll();
 
-        assertThrows( ValidationException.class, () -> engine.eval( reader, (ScriptContext) null ) );
-        assertThrows( ValidationException.class, () -> engine.eval( string, (ScriptContext) null ) );
+        assertThrows( IllegalArgumentException.class, () -> engine.eval( reader, (ScriptContext) null ) );
+        assertThrows( IllegalArgumentException.class, () -> engine.eval( string, (ScriptContext) null ) );
 
         expect( scriptContext.getAttributesScope( CLASSPATH ) ).andReturn( -1 ).anyTimes();
         expect( scriptContext.getAttributesScope( FILENAME ) ).andReturn( -1 ).anyTimes();
